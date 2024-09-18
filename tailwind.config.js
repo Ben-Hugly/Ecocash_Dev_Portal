@@ -22,16 +22,16 @@ export default {
         blue: "#7FB7F2",
         dimBlue: "#02437D",
         lightBlue: '#C5E3FF',
-        hoverbg: "#061F35",
-
+      
         //Dark Theme Colors
         backgroundDark:'#08081B',
         componentsBackgroundDark:'#00162A',
         successDark: '#88DF52',
         dangerDark: '#F62447',
         warningDark: '#ffe68c',
+        darkBgHover: "#061F35",
       
-        
+    
 
         //Light Theme Colors
         backgroundLight:'#FFFFFF',
@@ -40,13 +40,24 @@ export default {
         dangerLight: '#E31A1C',
         warningLight: '#FEAF58',
         buttonBluePastelLight:'#C5E3FF',
+        headerTextLight: '#035DAF',
+        borderLight:'#D8ECFF',
+        lightBgHover: '#f3f4f6',
 
         
       //Universal colors
       buttonBlue: '#035AA9',
       textDimBlue: '#035DAF',
-      textBrightBlue: '#1E92FB',
+      textBrightBlue: '#1E92FB', // also text heading dor dark mode
       textWhite:"#F2F8FF", 
+      textBlack: '#232323',
+    
+     
+
+  
+
+      
+     
 
         
       },
