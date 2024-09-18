@@ -52,9 +52,9 @@ function Navbar() {
         </div>
 
         {/* Buttons for login, SignUp, and logout */}
-        <div className={`flex items-center space-x-2 lg:space-x-6 md:space-x-4  ${menuOpen ? 'flex-col justify-between gap-5 absolute bg-hoverbg mt-16 p-4 rounded-3xl right-6 top-0  shadow-lg md:hidden' : 'hidden md:flex'}`}>
+        <div className={`flex items-center space-x-2 lg:space-x-6 md:space-x-4  ${menuOpen ? 'flex-col justify-between gap-5 absolute bg-darkBgHover mt-16 p-4 rounded-3xl right-6 top-0  shadow-lg md:hidden' : 'hidden md:flex'}`}>
           <div className="flex justify-between md:hidden items-center mb-2">
-              <AiOutlineClose className="cursor-pointer" onClick={() => setMenuOpen(false)} />
+              <AiOutlineClose className="cursor-pointer text-textWhite dark:text-textBlack " onClick={() => setMenuOpen(false)} />
             </div>
 
               {
