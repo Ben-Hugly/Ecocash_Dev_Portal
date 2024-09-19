@@ -14,9 +14,9 @@ benefitsCardDescription: "text-start mt-6  text-textBlack dark:text-textWhite fo
 
 
  /** Getting Started **/
- gettingStartedWrapper: "flex flex-col justify-center items-center overflow-hidden mt-10 w-full px-4 md:px-0",
- gettingStartedText: "w-full md:w-[420px] text-center mt-5 font-light leading-7 text-[14px] sm:text-[14px] font-poppins dark:text-textWhite text-black",
- gettingStartedCardWrapper: "flex flex-col justify-between md:flex-row gap-[18px] mt-9 w-full p-2",
+gettingStartedWrapper: "flex flex-col justify-center items-center overflow-hidden mt-10 w-full px-4 md:px-0",
+gettingStartedText: "w-full md:w-[420px] text-center mt-5 font-light leading-7 text-[14px] sm:text-[14px] font-poppins dark:text-textWhite text-black",
+gettingStartedCardWrapper: "flex flex-col justify-between md:flex-row gap-[18px] mt-9 w-full p-2",
 
 /** GettingStartedCard **/
 GettingStartedCardBG: "rounded-lg py-2 px-4 md:px-6 ",
@@ -94,7 +94,7 @@ navbarSignupButton: "text-white bg-textBlue border border-textBlue rounded-3xl p
   
 
 
- 
+
 
 
 /** Hero **/
@@ -146,7 +146,7 @@ SocialMediaLinksTitle: "text-textBlack dark:text-textWhite font-poppins text-[16
 
 
  /** Footer **/
- footerWrapper: "py-4 left-0 right-0 z-10 h-16 dark:text-textWhite text-textBlack p-4 flex justify-between items-center text-[12px] sm:text-[14px] bottom-0 fixed font-poppins font-thin relative",
+footerWrapper: "py-4 left-0 right-0 z-10 h-16 dark:text-textWhite text-textBlack p-4 flex justify-between items-center text-[12px] sm:text-[14px] bottom-0 fixed font-poppins font-thin relative",
 footerBorder: "border-t border-buttonBluePastelLight dark:border-borderBlue flex flex-col sm:flex-row justify-between items-center z-0",
 footerBorderWrapper: "max-w-[1280px] mx-auto w-full px-4 sm:px-6 md:px-0 z-0 relative",
 footerLinkWrapper: "flex items-center space-x-4 mb-2 sm:mb-0 mt-5 text-[12px]",
@@ -157,22 +157,22 @@ footerLinkWrapper: "flex items-center space-x-4 mb-2 sm:mb-0 mt-5 text-[12px]",
 
 
  /** SignUp Success **/
- SignUpSuccessContainer: "flex flex-col gap-10 px-4 md:px-0",
- SignUpSuccessLottie: "flex flex-col items-center justify-center gap-1",
- SignUpSuccessTextWrapper: "flex flex-col items-center justify-center text-center",
+SignUpSuccessContainer: "flex flex-col gap-10 px-4 md:px-0",
+SignUpSuccessLottie: "flex flex-col items-center justify-center gap-1",
+SignUpSuccessTextWrapper: "flex flex-col items-center justify-center text-center",
 
 
   /** Login**/
- LoginPasswordVisibility: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 focus:outline-none",
+LoginPasswordVisibility: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 focus:outline-none",
 
 
   
-  /** SignUp **/
-  SignUpSectionHeadingText: "text-left ml-3 -mb-2 font-bold", 
-  SignUpSectionHeadingTextContact:"text-left ml-3 -mb-2 font-bold mt-6",
-  SignUpSectionHeadingTextOrg:"text-left ml-3 -mb-2 font-bold mt-6",
-  SignUpGenderSelector: "appearance-none border border-buttonBluePastelLight dark:border-borderBlue rounded-lg w-full py-4 px-3 dark:text-white text-textBlack focus:outline-none focus:ring-2 focus:ring-borderBlueSecond bg-transparent hover:border-borderBlueSecond font-poppins text-[16px] h-[56px]",
-  SignUpDatePicker:"text-left items-start w-full justify-start",
+/** SignUp **/
+SignUpSectionHeadingText: "text-left ml-3 -mb-2 font-bold", 
+SignUpSectionHeadingTextContact:"text-left ml-3 -mb-2 font-bold mt-6",
+SignUpSectionHeadingTextOrg:"text-left ml-3 -mb-2 font-bold mt-6",
+SignUpGenderSelector: "appearance-none border border-buttonBluePastelLight dark:border-borderBlue rounded-lg w-full py-4 px-3 dark:text-white text-textBlack focus:outline-none focus:ring-2 focus:ring-borderBlueSecond bg-transparent hover:border-borderBlueSecond font-poppins text-[16px] h-[56px]",
+SignUpDatePicker:"text-left items-start w-full justify-start",
   
 
 
@@ -182,7 +182,7 @@ headings: "text-[28px] font-normal text-center pb-10 pt-4 font-poppins text-text
 
 headings2: "text-[36px] font-bold text-center pt-4 text-textDimBlue dark:text-textBrightBlue font-poppins",
 
-form: "container mx-auto max-w-xl p-8 border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full md:w-3/4 lg:w-2/3 justify-center items-center mb-12 mt-10",
+form: "container mx-auto max-w-xl p-8 border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full md:w-3/4 lg:w-2/3 justify-center items-center mt-10",
 
 inputs: "border dark:border-borderBlue  border-buttonBluePastelLight rounded-lg w-full py-4 px-3 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[56px]",
 

@@ -50,6 +50,7 @@ function SetNewPassword() {
   return (
     <>
     <ToastContainer /> {/* Display toast notifications */}
+    <div className="h-screen">
       <InputScreensLogo/>
         <div className={`${style.form}`}>
         <h2 className={`${style.PasswordRecoveryHeading} `}>Set New Password</h2>
@@ -141,7 +142,7 @@ function SetNewPassword() {
 
              
         </div>
-
+     </div>
       <Footer />
     </>
   );

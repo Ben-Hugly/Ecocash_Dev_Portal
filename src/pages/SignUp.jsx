@@ -162,8 +162,10 @@ const handleSubmit = async (event) => {
   return (
     <>
       <ToastContainer />
+      
       <InputScreensLogo/>
-        <div className={`${style.form}`}>
+      
+        <div className={`${style.form} mb-12`}>
              <h2 className={`${style.headings}`}>Sign Up</h2>
 
                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -428,8 +430,7 @@ const handleSubmit = async (event) => {
                       </p>
                 </div>
         </div>
-
-
+                                      
        <Footer/>
     </>
   )

@@ -16,39 +16,38 @@ function PasswordRecoverySuccess() {
   
   
   return (
-    <div className="grid grid-rows ">
-      <InputScreensLogo/>
-    
-    <div className={`${style.form} flex flex-col items-center justify-center`}>
+    <>
+    <div className="h-screen">
+        <InputScreensLogo/>
+      <div className={`${style.form} flex flex-col items-center justify-center`}>
 
-          <form className= {`${style.SignUpSuccessContainer}`}>
+            <form className= {`${style.SignUpSuccessContainer}`}>
 
-                    <div className= {`${style.SignUpSuccessLottie}`}>
-                        <Lottie options={defaultOptions} height={240} width={240} />
-                    </div>
-                        
-                    <div className={`${style.SignUpSuccessTextWrapper}`}>
+                      <div className= {`${style.SignUpSuccessLottie}`}>
+                          <Lottie options={defaultOptions} height={240} width={240} />
+                      </div>
+                          
+                      <div className={`${style.SignUpSuccessTextWrapper}`}>
 
-                          <span className= {`${style.lgText}`}>Success</span>
-                          <span className= {`${style.smallText} mt-3`}>You have successfully activated your account.</span>
+                            <span className= {`${style.lgText}`}>Success</span>
+                            <span className= {`${style.smallText} mt-3`}>You have successfully activated your account.</span>
 
-                    </div>
-                    <Link
-                      to="/login" 
-                      variant ="gradient"
-                      size="sm"
-                      type="submit"
-                      className= {` ${style.linkButtons} mt-8 `}>
-                      Continue to My Account
-                    </Link>
-                    
-          </form>
-
+                      </div>
+                      <Link
+                        to="/login" 
+                        variant ="gradient"
+                        size="sm"
+                        type="submit"
+                        className= {` ${style.linkButtons} mt-8 `}>
+                        Continue to My Account
+                      </Link>
+                      
+            </form>
+      </div>
     </div>
-
   <Footer/>
+</>
 
-  </div>
   )
 }
 

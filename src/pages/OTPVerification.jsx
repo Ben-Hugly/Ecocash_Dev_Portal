@@ -14,8 +14,9 @@ function OTPVerification() {
 
   return (
     <>
+    <div className ='h-screen'>
       <InputScreensLogo/>
-        <div className={`${style.form} gap-4`}>
+        <div className={`${style.form}`}>
               <h2 className={`${style.headings}`}>One Time Password (OTP)</h2>
 
                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -47,7 +48,7 @@ function OTPVerification() {
 
                   </form>
         </div>
-
+     </div>
       <Footer />
     </>
   )

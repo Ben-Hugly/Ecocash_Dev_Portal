@@ -16,7 +16,9 @@ function SignUpSuccess() {
   
   
   return (
-    <div className="grid grid-rows ">
+    <>
+    <div className="h-screen">
+  
       <InputScreensLogo/>
     
     <div className={`${style.form} flex flex-col items-center justify-center`}>
@@ -43,12 +45,12 @@ function SignUpSuccess() {
                     </Link>
                     
           </form>
-
     </div>
-
+    </div>
   <Footer/>
-
-  </div>
+ 
+  </>
+ 
   )
 }
 

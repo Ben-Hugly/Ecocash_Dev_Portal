@@ -22,7 +22,7 @@ function PasswordRecovery() {
 
   return (
     <>
-  
+    <div className="h-screen">
       <InputScreensLogo/>
         <div className={`${style.form} gap-4`}>
               <h2 className={`${style.PasswordRecoveryHeading} `}>Recover Password</h2>
@@ -63,7 +63,7 @@ function PasswordRecovery() {
                     
             </div>
         </div>
-
+    </div>
       <Footer />
     </>
   );

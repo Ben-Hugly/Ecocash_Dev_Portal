@@ -41,8 +41,9 @@ function Login() {
   return (
     <>
     <ToastContainer /> {/* Display toast notifications */}
+    <div className ='h-screen'>
       <InputScreensLogo/>
-        <div className={`${style.form} gap-4`}>
+        <div className={`${style.form} gap-4 `}>
               <h2 className={`${style.headings}`}>Login</h2>
 
                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -128,7 +129,7 @@ function Login() {
                     
             </div>
         </div>
-
+    </div>
       <Footer />
     </>
   );

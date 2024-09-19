@@ -26,7 +26,7 @@ function SignUpMobileAuth() {
     <>
   
       <InputScreensLogo/>
-        <div className={`${style.form} gap-4`}>
+        <div className={`${style.form} gap-4 mb-8`}>
               <h2 className={`${style.PasswordRecoveryHeading} -mt-7 `}>Mobile Authenticator Setup</h2>
               <h3 className={`${style.smallText} font-semibold mt-10`}>Mobile Authenticator Setup </h3>
 
