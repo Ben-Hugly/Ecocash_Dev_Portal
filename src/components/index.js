@@ -8,9 +8,11 @@ import SocialMediaLinks from "./SocialMediaLinks";
 import Benefits from './Benefits'
 import Testimonials from "./Testimonials"
 import ReadyToGrow from "./ReadyToGrow"
+import InputScreensLogo from "./InputScreensLogo"
+import QR from "./QR";
 
 
 
 
 
-export  {ThemeToggle, Navbar,Hero,GettingStarted, UseCases, Benefits,Testimonials, ReadyToGrow,SocialMediaLinks,Footer};//
+export  {ThemeToggle, Navbar,Hero,GettingStarted, UseCases, Benefits,Testimonials, ReadyToGrow,SocialMediaLinks,Footer,InputScreensLogo,QR};//

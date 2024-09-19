@@ -78,10 +78,10 @@ useCaseTabSectionCardWrapper: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md
 
 
 /** Navbar **/
-navbarContainer: "text-textWhite fixed top-0 left-0 right-0 z-10 py-2 md:px-0 lg:px-0 px-8",
-navbarWrapper: "container mx-auto flex justify-between items-center h-20 p-2",
-navbarIconWrapper: "flex items-center",
-navbarLogo: "w-[160px] h-[29px] ",
+navbarContainer: "fixed top-0 left-0 right-0 z-10 py-2 md:px-0 lg:px-0 px-8",
+navbarWrapper: "container mx-auto flex justify-between items-center h-20",
+navbarIconWrapper: "flex items-center ",
+navbarLogo: "w-[180px] h-[50px] ",
 navbarLogout: "text-textBlueSecond bg-primary border border-textBlue rounded-xl py-2 px-7 hover:bg-textBlue hover:text-white font-poppins h-[44px] flex items-center gap-2",
 navbarButtonWrapper: "flex items-center space-x-2 lg:space-x-6 md:space-x-4",
 navbarLoginButton: "text-textDimBlue bg-buttonBluePastelLight dark:bg-primary border border-textBlue rounded-3xl py-2 px-7 hover:bg-textDimBlue hover:text-white font-poppins h-[44px] flex items-center gap-2",
@@ -135,18 +135,18 @@ ReadyToGrowButtonText: "ml-2 text-[14px] md:text-[16px] mr-1 font-poppins ",
 
 
   /** SocialMediaLinks **/
-  SocialMediaLinksContainer: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mt-10 mb-10 justify-center items-center px-4 md:px-0",
-  SocialMediaLinksWrapper: "flex flex-col items-center justify-center",
-  SocialMediaLinksIconWrapper: "rounded-full p-4",
-  SocialMediaLinksIcon: "h-[36px] w-[36px] dark:text-textWhite text-primary",
-  SocialMediaLinksDescription: "mt-2 text-textBlack dark:text-textWhite font-thin font-poppins text-[14px] md:text-[14px] w-full md:w-[230px] text-center",
-  SocialMediaLinksTitle: "text-textBlack dark:text-textWhite font-poppins text-[16px] font-semibold mt-2",
+SocialMediaLinksContainer: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mt-10 mb-10 justify-center items-center px-4 md:px-0",
+SocialMediaLinksWrapper: "flex flex-col items-center justify-center",
+SocialMediaLinksIconWrapper: "rounded-full p-4",
+SocialMediaLinksIcon: "h-[36px] w-[36px] dark:text-textWhite text-primary",
+SocialMediaLinksDescription: "mt-2 text-textBlack dark:text-textWhite font-thin font-poppins text-[14px] md:text-[14px] w-full md:w-[230px] text-center",
+SocialMediaLinksTitle: "text-textBlack dark:text-textWhite font-poppins text-[16px] font-semibold mt-2",
 
 
 
 
  /** Footer **/
-footerWrapper: "py-4 left-0 right-0 z-10 h-16 dark:text-textWhite text-textBlack p-4 flex justify-between items-center text-[12px] sm:text-[14px] bottom-0 fixed font-poppins font-thin relative",
+ footerWrapper: "py-4 left-0 right-0 z-10 h-16 dark:text-textWhite text-textBlack p-4 flex justify-between items-center text-[12px] sm:text-[14px] bottom-0 fixed font-poppins font-thin relative",
 footerBorder: "border-t border-buttonBluePastelLight dark:border-borderBlue flex flex-col sm:flex-row justify-between items-center z-0",
 footerBorderWrapper: "max-w-[1280px] mx-auto w-full px-4 sm:px-6 md:px-0 z-0 relative",
 footerLinkWrapper: "flex items-center space-x-4 mb-2 sm:mb-0 mt-5 text-[12px]",
@@ -171,22 +171,22 @@ footerLinkWrapper: "flex items-center space-x-4 mb-2 sm:mb-0 mt-5 text-[12px]",
   SignUpSectionHeadingText: "text-left ml-3 -mb-2 font-bold", 
   SignUpSectionHeadingTextContact:"text-left ml-3 -mb-2 font-bold mt-6",
   SignUpSectionHeadingTextOrg:"text-left ml-3 -mb-2 font-bold mt-6",
-  SignUpGenderSelector: "appearance-none border border-borderBlue rounded-lg w-full py-4 px-3 text-white focus:outline-none focus:ring-2 focus:ring-borderBlueSecond bg-transparent hover:border-borderBlueSecond font-poppins text-[16px] h-[56px]",
+  SignUpGenderSelector: "appearance-none border border-buttonBluePastelLight dark:border-borderBlue rounded-lg w-full py-4 px-3 dark:text-white text-textBlack focus:outline-none focus:ring-2 focus:ring-borderBlueSecond bg-transparent hover:border-borderBlueSecond font-poppins text-[16px] h-[56px]",
   SignUpDatePicker:"text-left items-start w-full justify-start",
   
 
 
 
 
-headings: "text-[28px] md:text-[32px] font-bold text-center pb-10 pt-4 text-white font-poppins",
+headings: "text-[28px] font-normal text-center pb-10 pt-4 font-poppins text-textBlack dark:text-textBrightBlue",
 
 headings2: "text-[36px] font-bold text-center pt-4 text-textDimBlue dark:text-textBrightBlue font-poppins",
 
-form: "container mx-auto max-w-xl p-8 border border-borderBlue rounded-3xl shadow-md w-full md:w-3/4 lg:w-2/3 justify-center items-center mb-12 mt-5",
+form: "container mx-auto max-w-xl p-8 border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full md:w-3/4 lg:w-2/3 justify-center items-center mb-12 mt-10",
 
-inputs: "border border-borderBlue rounded-lg w-full py-4 px-3 text-white focus:outline-none focus:shadow-outline bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[56px]",
+inputs: "border dark:border-borderBlue  border-buttonBluePastelLight rounded-lg w-full py-4 px-3 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[56px]",
 
-inputLabels: "text-textWhite font-poppins text-[11px] block text-left absolute top-0 left-6 -mt-2 -ml-2 z-10",
+inputLabels: "text-textBlack dark:text-white font-poppins text-[11px] block text-left absolute top-[-8px] left-[10px] bg-white dark:bg-primary z-10 px-1",
 
 smallText: "dark:text-textWhite text-black font-poppins text-[14px]",
 
@@ -194,19 +194,28 @@ smallTextBlue: "text-textDimBlue font-poppins text-[14px] hover:text-gray-600 fl
 
 lgText: " text-black dark:text-white font-poppins text-[18px] font-bold",
 
-otpTextOne: "text-textWhite font-poppins text-[14px] block text-left ml-2 mb-4 font-bold",
+otpTextOne: "text-textBlack dark:text-textWhite  font-poppins text-[14px] block text-left ml-2 mb-4 font-bold",
 
-otpTextTwo: "text-textWhite font-poppins text-[10px] block text-left ml-2 mt-2",
+otpTextTwo: " text-textBlack dark:text-textWhite font-poppins text-[12px] block text-left ml-2 mt-2",
 
 linkHover: "hover:text-borderBlueSecond hover:underline",
 
-authButtons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-lg",
+buttons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl",
+
+linkButtons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl flex justify-center items-center",
 
 successButton: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-4 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-lg text-center justify-center",
 
-forgotPass: "text-textBlueThird hover:underline text-sm font-poppins text-[16px]",
+forgotPass: "text-textBrightBlue dark:text-textDimBlue hover:underline text-sm font-poppins text-[16px]",
 
-links: "text-textBlueThird hover:underline text-[14px]",
+links: "text-textBrightBlue dark:text-textDimBlue hover:underline text-[14px]",
+
+
+InputScreensLogoWrapper: "flex justify-center items-center w-full mt-10", // Ensure the wrapper is full width and centered
+InputScreensLogo: "w-[180px] h-[40px]",
+
+PasswordRecoveryHeading: "text-[28px] font-normal text-center pb-2 pt-4 font-poppins text-textBlack dark:text-textBrightBlue",
+
 
 
 }

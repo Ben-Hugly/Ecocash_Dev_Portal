@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 const animationData = await import('../assets/success.json');
 import { InputScreensLogo }  from "../components"
 
-function SignUpSuccess() {
+function PasswordRecoverySuccess() {
 
   const defaultOptions = {
     loop: true,
@@ -30,11 +30,11 @@ function SignUpSuccess() {
                     <div className={`${style.SignUpSuccessTextWrapper}`}>
 
                           <span className= {`${style.lgText}`}>Success</span>
-                          <span className= {`${style.smallText}`}>You have successfully registered your account. Please check your email and follow instructions.</span>
+                          <span className= {`${style.smallText} mt-3`}>You have successfully activated your account.</span>
 
                     </div>
                     <Link
-                      to="/signin" 
+                      to="/login" 
                       variant ="gradient"
                       size="sm"
                       type="submit"
@@ -52,4 +52,4 @@ function SignUpSuccess() {
   )
 }
 
-export default SignUpSuccess
+export default PasswordRecoverySuccess
