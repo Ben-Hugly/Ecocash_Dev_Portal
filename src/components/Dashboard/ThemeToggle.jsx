@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { FaMoon } from 'react-icons/fa'
 import { BsSunFill} from 'react-icons/bs'
+import { MdDarkMode,MdOutlineLightMode } from "react-icons/md";
 function ThemeToggle() {
     const[darkMode,setDarkMode] = useState(true);
 
@@ -25,15 +26,10 @@ function ThemeToggle() {
 
      
   return (
-    <div 
-    className='relative w-16 h-6 flex items-center dark:bg-green-600 bg-red-300 cursor-pointer rounded-full p-1'
-    onClick={() => setDarkMode(!darkMode)}>
-        <FaMoon className="text-white size={18}"/>
-        <div className='absolute bg-white dark:bg-green-600 w-6 h-6 rounded-full shadow-md transform transition-transform duration-300'
-        style={darkMode ? {left :'2px'} : {right:'2px'}}>
-
-        </div>
-        <BsSunFill className='ml-auto text-yellow-400'/>
+    <div className="relative w-12 h-12 flex items-center cursor-pointer rounded-full p-3  hover:bg-textDimBlue"
+      onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? <MdOutlineLightMode size={28} className="text-yellow-400 hover:scale-125" /> : <MdDarkMode size={28} className="text-textBlue hover:scale-125" />}
+    
     </div>
   )
 }

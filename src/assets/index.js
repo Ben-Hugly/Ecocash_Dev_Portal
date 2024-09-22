@@ -11,6 +11,7 @@ import hugly from'../assets/hugly.png';
 import google from'../assets/google.png';
 import chess from'../assets/chess.jpg';
 import hero from'../assets/hero.jpg';
+import profile from'../assets/profile.png';
 
 
 export {
@@ -28,4 +29,5 @@ export {
     google,
     chess,
     hero,
+    profile
 };

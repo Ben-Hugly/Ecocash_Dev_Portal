@@ -41,7 +41,7 @@ function Login() {
   return (
     <>
     <ToastContainer /> {/* Display toast notifications */}
-    <div className ='h-screen'>
+    <div className ='h-screen '>
       <InputScreensLogo/>
         <div className={`${style.form} gap-4 `}>
               <h2 className={`${style.headings}`}>Login</h2>
@@ -61,7 +61,7 @@ function Login() {
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}/>
 
-                                  <label htmlFor="username" className={`${style.inputLabels}`}>Username:</label>
+                                  <label htmlFor="username" className={`${style.inputLabels}`}>Username</label>
 
                               </div>
                         </div>
@@ -79,7 +79,7 @@ function Login() {
                               value={password}
                               onChange={(e) => setPassword(e.target.value)} />
 
-                            <label htmlFor="password" className={`${style.inputLabels}`}> Password: </label>
+                            <label htmlFor="password" className={`${style.inputLabels}`}> Password </label>
 
                           <button
                               type="button"

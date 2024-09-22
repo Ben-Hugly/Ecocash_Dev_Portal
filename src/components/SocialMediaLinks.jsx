@@ -13,10 +13,8 @@ const SocialMediaLinks = () => {
 
             <div key={index} className={`${style.SocialMediaLinksWrapper}`}>
 
-                <div className={`${style.SocialMediaLinksIconWrapper}`}>
-                    <data.icon className={`${style.SocialMediaLinksIcon}`}/>
-                </div>
-
+                 <img src={data.icon} className={`${style.SocialMediaLinksIcon} text-white`}/>
+          
                 <span className={`${style.SocialMediaLinksTitle}`}>{data.title}</span>
 
                 <p className={`${style.SocialMediaLinksDescription}`} >

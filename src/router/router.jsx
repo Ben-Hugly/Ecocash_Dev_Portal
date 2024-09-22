@@ -1,7 +1,7 @@
 import App from '../App'
 import { createBrowserRouter} from 'react-router-dom'
 import React from 'react'
-import { Login,OTPVerification, SignUp, SignUpSuccess, PasswordRecovery,PasswordRecoverySuccess,SetNewPassword,SignUpMobileAuth,} from '../pages'
+import { Login,OTPVerification, SignUp, SignUpSuccess, PasswordRecovery,PasswordRecoverySuccess,SetNewPassword,SignUpMobileAuth,Dashboard,} from '../pages'
 
 export const router = createBrowserRouter([
     {path: "/", element: <App/>},
@@ -12,7 +12,8 @@ export const router = createBrowserRouter([
     {path: "/signup", element: <SignUp/>},
     {path: "/signupsuccessful", element: < SignUpSuccess/>},
     {path: "/newpassword", element: < SetNewPassword/>},
-    {path: "/SignUpMobileAuth", element: < SignUpMobileAuth/>}
+    {path: "/signUpMobileAuth", element: < SignUpMobileAuth/>},
+    {path: "/dashboard",  element: < Dashboard/>}
      
 ])
 

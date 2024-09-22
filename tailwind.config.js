@@ -30,6 +30,7 @@ export default {
         dangerDark: '#F62447',
         warningDark: '#ffe68c',
         darkBgHover: "#061F35",
+        darkBgComponents: "#00162A",
       
     
 

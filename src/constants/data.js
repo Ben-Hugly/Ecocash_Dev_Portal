@@ -4,6 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { IoMdBuild, IoIosHelpCircle,IoLogoWhatsapp  } from "react-icons/io";
 import { FaCirclePlay, FaFacebook } from "react-icons/fa6";
 import { MdOutlineSupportAgent,MdSpaceDashboard } from "react-icons/md";
+import {facebook,linkedin,whatsapp,x,youtube} from '../assets/SocialMediaIcons'
 import { PiChartLineUpBold } from "react-icons/pi";
 import React from "react";
 import {
@@ -95,27 +96,27 @@ const GettingStartedData = [
 
 const socialMediaData = [
   {
-    icon: IoLogoWhatsapp ,
+    icon: whatsapp ,
     title: 'WhatsApp',
     description: 'Connect with the EcoCash Developers community on WhatsApp',
   },
   {
-    icon: FaFacebook,
+    icon: facebook,
     title: 'Facebook',
     description: 'Follow @EcoCashDev on Facebook',
   },
   {
-    icon: FaYoutube,
+    icon: youtube,
     title: 'YouTube',
     description: 'Subscribe to EcoCash Developers on YouTube',
   },
   {
-    icon: BsTwitterX,
+    icon: x,
     title: 'X',
     description: 'Follow @EcoCashDev on X',
   },
   {
-    icon: FaLinkedinIn,
+    icon: linkedin,
     title: 'LinkedIn',
     description: 'Connect with the EcoCash Developers community on LinkedIn',
   },
@@ -167,7 +168,7 @@ const BenefitsData = [
 const UseCaseDropdownData = [
   {
     title: "Seamless Integration",
-    content: "The API allows developers to integrate Hugly Merchant Payments seamlessly into their applications. This integration enables businesses to initiate payment requests, generate payment instructions, and handle payment notifications and confirmations.",
+    content: "The API allows developers to integrate EcoCash Merchant Payments seamlessly into their applications. This integration enables businesses to initiate payment requests, generate payment instructions, and handle payment notifications and confirmations.",
     image: seamlessIntegration,
     isExpanded: false,
   },
@@ -181,13 +182,13 @@ const UseCaseDropdownData = [
   {
     title: "Enhanced Payment Acceptance",
     content:
-      "With the Hugly Merchant Payments API, businesses can expand their payment acceptance options beyond traditional methods. By integrating the API into their applications, merchants can accept payments directly from customers' EcoCash accounts, providing a convenient and secure payment experience.",
+      "With the EcoCash Merchant Payments API, businesses can expand their payment acceptance options beyond traditional methods. By integrating the API into their applications, merchants can accept payments directly from customers' EcoCash accounts, providing a convenient and secure payment experience.",
     image: enhancedPayment,
     isExpanded: false,
   },
   {
     title: "Customizable Payment Flow",
-    content: "The Hugly Merchant Payments API offers flexibility in designing payment flows based on specific business requirements. Merchants can customize the payment process to align with their branding and user experience, ensuring a consistent and seamless checkout process for their customers.",
+    content: "The EcoCash Merchant Payments API offers flexibility in designing payment flows based on specific business requirements. Merchants can customize the payment process to align with their branding and user experience, ensuring a consistent and seamless checkout process for their customers.",
     image: customizablePayment,
     isExpanded: false,
   },

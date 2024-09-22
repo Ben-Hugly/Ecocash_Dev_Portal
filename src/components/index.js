@@ -1,4 +1,4 @@
-import ThemeToggle from "./ThemeToggle";
+import {ThemeToggle} from "../components/Dashboard";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Hero from "./Hero";
