@@ -1,0 +1,86 @@
+import React from "react";
+import { HiQuestionMarkCircle } from "react-icons/hi2";
+function MyApplicationDetailsCard({
+  appName,
+  appId,
+  appNumber,
+  merchantCode,
+  apiKey,
+  description,
+  category,
+  status,
+}) {
+  return (
+    <div className="flex flex-col gap-8 rounded-lg text-textBlack dark:text-textWhite font-poppins text-sm font-thin">
+      <div className="flex items-center gap-2">
+        <span className="w-[280px] text-left">Application Name</span>
+        <span>{appName}</span>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <div className="w-[280px] text-left flex flex-row gap-1">
+          <span>Application ID</span>
+          <HiQuestionMarkCircle size={18} color="#1E92FB" />
+        </div>
+        <span>{appId}</span>
+      </div>
+
+      <div className="flex items-center gap-2 text-left">
+        <div className="w-[280px] flex flex-row gap-1">
+          <span>Application Number</span>
+          <HiQuestionMarkCircle size={18} color="#1E92FB" />
+        </div>
+
+        <span>{appNumber}</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="w-[280px] text-left">Merchant Code</span>
+        <span>{merchantCode}</span>
+      </div>
+
+      <div className="flex items-center gap-2 text-left">
+        <div className="w-[280px] flex flex-row gap-1">
+          <span>API Key</span>
+          <HiQuestionMarkCircle size={18} color="#1E92FB" />
+        </div>
+
+        <span>{apiKey}</span>
+      </div>
+      <div className="dark:bg-darkBgComponents bg-white border-t border-b p-4 w-full  border-buttonBluePastelLight dark:border-borderBlue">
+        <div className="flex items-center gap-2">
+          <span className="w-[280px] text-left">Description</span>
+          <span>{description}</span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="w-[280px] text-left">Category</span>
+        {category.map((cat) => {
+          <span
+            key={cat}
+            className="border p-1 rounded-lg border-borderLight dark:border-borderBlue shadow-md"
+          >
+            {cat}
+          </span>;
+        })}
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="w-[280px] text-left ">Status</span>
+
+        <div
+          className={
+            status === "Live"
+              ? "bg-successLight w-2 h-2 rounded-full"
+              : "bg-dangerLight w-2 h-2 rounded-full"
+          }
+        ></div>
+        <span className="text-sm font-poppins dark:text-textWhite">
+          {status}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export default MyApplicationDetailsCard;

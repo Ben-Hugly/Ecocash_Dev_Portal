@@ -137,7 +137,6 @@ ReadyToGrowButtonText: "ml-2 text-[14px] md:text-[16px] mr-1 font-poppins ",
   /** SocialMediaLinks **/
 SocialMediaLinksContainer: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mt-10 mb-10 justify-center items-center px-4 md:px-0",
 SocialMediaLinksWrapper: "flex flex-col items-center justify-center",
-SocialMediaLinksIconWrapper: "rounded-full p-4",
 SocialMediaLinksIcon: "h-[36px] w-[36px] dark:text-textWhite text-primary",
 SocialMediaLinksDescription: "mt-2 text-textBlack dark:text-textWhite font-thin font-poppins text-[14px] md:text-[14px] w-full md:w-[230px] text-center",
 SocialMediaLinksTitle: "text-textBlack dark:text-textWhite font-poppins text-[16px] font-semibold mt-2",
@@ -200,7 +199,7 @@ otpTextTwo: " text-textBlack dark:text-textWhite font-poppins text-[12px] block 
 
 linkHover: "hover:text-borderBlueSecond hover:underline",
 
-buttons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl",
+buttons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl hover:scale-105",
 
 linkButtons: "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl flex justify-center items-center",
 

@@ -8,6 +8,14 @@ import {
   AddNewApplication,
   NewAppSuccess,
   MyApplicationsTabView,
+  EditApplication,
+  EditSuccessful,
+  ReverseTransaction,
+  ReversalFailed,
+  ReversalSuccessful,
+  ReversalTransactionDetails,
+  MyApplications,
+  MyApplicationDetails,
 } from "../components/Dashboard";
 import { SocialMediaLinks, Footer } from "../components";
 
@@ -17,6 +25,14 @@ function Dashboard() {
       <Sidebar /> {/* Ensures Sidebar doesn't grow */}
       <div className="flex flex-col flex-grow p-2">
         <NavbarDashboard />
+        <MyApplicationDetails />
+        <MyApplications />
+        <ReversalTransactionDetails />
+        <ReversalSuccessful />
+        <ReversalFailed />
+        <ReverseTransaction />
+        <EditSuccessful />
+        <EditApplication />
         <MyApplicationsTabView />
         <Welcome username={"Bernard"} />
         <NewAppSuccess />

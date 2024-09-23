@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { FiCopy } from 'react-icons/fi';
+import React, { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { FiCopy } from "react-icons/fi";
 
 const CodeSnippet = () => {
   const [copied, setCopied] = useState(false);
@@ -28,47 +28,47 @@ const CodeSnippet = () => {
   };
 
   const customStyle = {
-    lineHeight: '1.5',
-    fontSize: '10px',
-    borderRadius: '8px',
-    padding: '16px',
-    background: '#08081B',
-    color: '#f8f8f2',
-    fontFamily: 'Consolas, monospace',
+    lineHeight: "1.5",
+    fontSize: "10px",
+    borderRadius: "8px",
+    padding: "16px",
+    background: "#08081B",
+    color: "#f8f8f2",
+    fontFamily: "Consolas, monospace",
   };
 
   return (
+    <div className="bg-[#1f303f] p-4 rounded-3xl shadow-md max-w-full my-12">
+      <h2 className="text-white text-lg  font-semibold mb-2 text-left ml-2">
+        Java
+      </h2>
 
-  <div className='bg-[#1f303f] p-4 rounded-3xl shadow-md max-w-full my-12'>
-
-   <h2 className="text-white text-lg  font-semibold mb-2 text-left ml-2">Java</h2>
-    
-    <div className="relative rounded-3xl">
+      <div className="relative rounded-3xl">
         <div
-            onClick={handleCopy}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            className="cursor-pointer absolute flex flex-row  top-0 right-0 p-2"
-            aria-label="Copy code">
-            <FiCopy size={20} color={hover ? '#11b7a49d' : '#808080'} />
-            {copied && <span className="ml-2 text-green-300">Copied!</span>}
-          
-          </div>
-    </div>
-      
-
-        <SyntaxHighlighter
-          language="java"
-          style={coldarkDark}
-          customStyle={customStyle}
-          lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
-          showLineNumbers
-          wrapLines={true}>
-          {codeString}
-        </SyntaxHighlighter>
+          onClick={handleCopy}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          className="cursor-pointer absolute flex flex-row  top-0 right-0 p-2"
+          aria-label="Copy code"
+        >
+          <FiCopy size={20} color={hover ? "#11b7a49d" : "#808080"} />
+          {copied && <span className="ml-2 text-green-300">Copied!</span>}
+        </div>
       </div>
 
-
+      <SyntaxHighlighter
+        language="java"
+        style={coldarkDark}
+        customStyle={customStyle}
+        lineProps={{
+          style: { wordBreak: "break-all", whiteSpace: "pre-wrap" },
+        }}
+        showLineNumbers
+        wrapLines={true}
+      >
+        {codeString}
+      </SyntaxHighlighter>
+    </div>
   );
 };
 
