@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoChevronUpOutline, IoChevronDownOutline } from "react-icons/io5";
-import { logoDashboard } from "../../assets/Logo";
+import { logoDark, logoLight } from "../../assets/Logo";
 import style from "../../styles";
 import { GoHomeFill } from "react-icons/go";
 import { MdFolderSpecial, MdArrowRight } from "react-icons/md";
+import { useTheme } from "next-themes";
 
 const Sidebar = () => {
   const [isDevToolsOpen, setDevToolsOpen] = useState(false);
   const [isApiRefOpen, setApiRefOpen] = useState(false);
   const [overviewActive, setOverviewActive] = useState(false);
   const [myAppsActive, setMyAppsActive] = useState(false);
+  //logo change based on the theme
+  const { theme } = useTheme();
 
   const toggleDevTools = () => {
     setDevToolsOpen(!isDevToolsOpen);
@@ -33,9 +36,14 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-darkBgComponents  w-[320px] flex flex-col p-4 h-full p-3">
+    <div className="bg-white dark:bg-darkBgComponents  w-[320px] flex flex-col p-4 h-full ">
       <div className="flex justify-between items-center  py-3">
-        <img src={logoDashboard} />
+        <img
+          src={theme === "light" ? logoLight : logoDark}
+          alt="EcoCash Developer"
+          className={`${style.navbarLogo}`}
+          onClick={() => alert(theme)}
+        />
       </div>
 
       <div className="mt-5 border-b border-t border-borderLight dark:border-borderBlue ">
@@ -70,7 +78,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <span className="text-xs font-poppins font-thin p-3 text-left text-textBlack dark:text-textWhite">
+      <span className="text-sm font-poppins font-thin p-3 text-left text-textBlack dark:text-textWhite">
         Documentation
       </span>
       <div className="bg-bgWhite dark:bg-backgroundDark rounded-2xl p-4 ml-2 ">

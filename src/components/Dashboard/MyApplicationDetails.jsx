@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { MdEdit } from "react-icons/md";
 import MyApplicationDetailsCard from "../Dashboard/Cards/MyApplicationDetailsCard";
+import {
+  Pagination,
+  MyAppUsersAndPermissions,
+  TransactionsTable,
+  TransactionsFilter,
+} from "../Dashboard";
 
 function MyApplicationDetails() {
   const tabs = ["General", "Transactions", "Users & Permissions"];
@@ -17,16 +23,139 @@ function MyApplicationDetails() {
     description:
       "This application is for Hugly's USD. For C2B, B2B, B2C and Reversal",
   };
+
+  // State for filtering
+  const [filterDate, setFilterDate] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState("");
+  const [selectedAmount, setSelectedAmount] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Manage items per page
+
+  const handleDateChange = (date) => setFilterDate(date);
+  const handleStatusChange = (status) => setSelectedStatus(status);
+  const handleAmountChange = (amount) => setSelectedAmount(amount);
+  const handleSearchTermChange = (term) => setSearchTerm(term);
+
+  // Sample transaction data
+  const transactions = [
+    {
+      id: 2089,
+      ecocashReference: "123456",
+      customMsisdn: "777777777",
+      amount: 100,
+      date: "2023-10-26",
+      currency: "USD",
+      crDr: "CR",
+      status: "PENDING_VALIDATION",
+    },
+    {
+      id: 2090,
+      ecocashReference: "123456",
+      customMsisdn: "777777777",
+      amount: 100,
+      date: "2023-10-26",
+      currency: "USD",
+      crDr: "DR",
+      status: "FAILED_REVERSAL",
+    },
+
+    {
+      id: 2091,
+      ecocashReference: "123456",
+      customMsisdn: "777777777",
+      amount: 100,
+      date: "2023-10-26",
+      currency: "USD",
+      crDr: "CR",
+      status: "SUCCESS",
+    },
+    {
+      id: 2092,
+      ecocashReference: "123456",
+      customMsisdn: "777777777",
+      amount: 100,
+      date: "2023-10-26",
+      currency: "USD",
+      crDr: "DR",
+      status: "REVERSED",
+    },
+  ];
+
+  // Calculate filtered transactions based on the filters applied
+  const filteredTransactions = transactions.filter((transaction) => {
+    const dateMatch =
+      !filterDate ||
+      new Date(transaction.date).toLocaleDateString() ===
+        new Date(filterDate).toLocaleDateString();
+    const statusMatch =
+      !selectedStatus || transaction.status === selectedStatus;
+    const amountMatch =
+      !selectedAmount || transaction.amount === parseFloat(selectedAmount);
+    const searchTermMatch =
+      !searchTerm ||
+      transaction.ecocashReference
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      transaction.customMsisdn.includes(searchTerm) ||
+      transaction.amount.toString().includes(searchTerm);
+
+    return dateMatch && statusMatch && amountMatch && searchTermMatch;
+  });
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "General":
+        return <MyApplicationDetailsCard {...cardProps} />;
+      case "Transactions":
+        return (
+          <>
+            <TransactionsFilter
+              filterDate={filterDate}
+              handleDateChange={handleDateChange}
+              selectedStatus={selectedStatus}
+              handleStatusChange={handleStatusChange}
+              selectedAmount={selectedAmount}
+              handleAmountChange={handleAmountChange}
+              searchTerm={searchTerm}
+              handleSearchTermChange={handleSearchTermChange}
+            />
+            <TransactionsTable
+              filterDate={filterDate}
+              selectedStatus={selectedStatus}
+              selectedAmount={selectedAmount}
+              searchTerm={searchTerm}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              filteredTransactions={filteredTransactions}
+              itemsPerPage={itemsPerPage} // Pass itemsPerPage
+            />
+            <Pagination
+              currentPage={currentPage}
+              itemsPerPage={itemsPerPage}
+              totalItems={filteredTransactions.length}
+              onPageChange={setCurrentPage}
+              onItemsPerPageChange={setItemsPerPage} // Handle items per page change
+            />
+          </>
+        );
+      case "Users & Permissions":
+        return <MyAppUsersAndPermissions />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
-      <div className="dark:bg-darkBgComponents bg-white text-white p-6 rounded-3xl ">
+      <div className="dark:bg-backgroundDark bg-white text-white p-6 rounded-3xl">
         <div className="flex justify-between mb-4 flex-col gap-5">
           <div className="flex flex-row items-center justify-between">
-            <div className="font-poppins text-left max-w-[640px] text-textBlack dark:text-textWhite flex flex-col gap-4">
-              <h2 className="text-[45px] font-semibold ">
+            <div className="font-poppins text-left max-w-[640px] text-textBlack dark:text-textWhite flex flex-col gap-4 ml-3">
+              <h2 className="text-[45px] font-semibold">
                 {"Hughly USD Payment: Comprehensive"}
               </h2>
-              <span className="text-sm font-thin">
+              <span className="text-sm font-thin opacity-75">
                 This application is for {"Hugly's USD."} For C2B, B2B, B2C and
                 Reversal
               </span>
@@ -40,23 +169,23 @@ function MyApplicationDetails() {
             </div>
           </div>
 
-          <div className="flex mb-4">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`px-4 py-2 text-textBlack dark:text-textWhite ${
-                  tab === activeTab ? "border-b-2 border-red-500" : ""
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
+          <div className="dark:bg-componentsBackgroundDark bg-white text-white p-2 rounded-3xl">
+            <div className="flex mb-4 p-3">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  className={`px-4 py-2 text-textBlack dark:text-textWhite font-poppins text-sm ${
+                    tab === activeTab ? "border-b-2 border-red-500" : ""
+                  }`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
 
-        <div className="border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl p-4">
-          <MyApplicationDetailsCard {...cardProps} />
+            {renderContent()}
+          </div>
         </div>
       </div>
     </div>

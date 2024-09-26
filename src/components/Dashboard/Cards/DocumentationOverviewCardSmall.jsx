@@ -5,7 +5,7 @@ import { IoChevronForwardOutline } from "react-icons/io5";
 function DocumentationOverviewCardSmall({ title, description }) {
   return (
     <button className="rounded-2xl border dark:border-borderBlue border-borderLight p-4 space-y-3 hover:bg-lightBgHover dark:hover:bg-darkBgHover pb-8">
-      <div className="border-b border-borderLight flex items-center justify-between">
+      <div className="border-b border-borderLight flex items-center justify-between pb-3">
         <h2 className="text-[14px] font-semibold dark:text-textWhite text-textBlack">
           {title}
         </h2>

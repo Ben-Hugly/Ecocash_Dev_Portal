@@ -60,7 +60,7 @@ function MyApplicationsTabView() {
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`px-4 py-2 text-textBlack dark:text-textWhite ${
+              className={`px-4 py-2 text-textBlack dark:text-textWhite font-poppins text-sm ${
                 tab === activeTab ? "border-b-2 border-red-500" : ""
               }`}
               onClick={() => setActiveTab(tab)}

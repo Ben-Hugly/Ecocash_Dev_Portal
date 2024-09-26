@@ -16,15 +16,21 @@ import {
   ReversalTransactionDetails,
   MyApplications,
   MyApplicationDetails,
+  Overview,
+  BuildingYourIntegration,
+  Payments,
+  CreateApiKey,
 } from "../components/Dashboard";
 import { SocialMediaLinks, Footer } from "../components";
 
 function Dashboard() {
   return (
-    <div className="flex flex-row w-full h-full dark:bg-backgroundDark bg-white">
+    <div className="flex flex-row h-full dark:bg-backgroundDark bg-white w-full">
       <Sidebar /> {/* Ensures Sidebar doesn't grow */}
-      <div className="flex flex-col flex-grow p-2">
+      <div className="flex flex-col flex-grow p-2 gap-6 ">
         <NavbarDashboard />
+        {/** 
+         *  <Overview />
         <MyApplicationDetails />
         <MyApplications />
         <ReversalTransactionDetails />
@@ -41,6 +47,11 @@ function Dashboard() {
         <DocumentationOverviewSmall />
         <SocialMediaLinks />
         <Footer />
+        <BuildingYourIntegration />
+        <CreateApiKey />
+        <Payments />
+        */}
+        <MyApplicationDetails />
       </div>
     </div>
   );
