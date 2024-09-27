@@ -1,30 +1,32 @@
 // SocialMediaLinks.js
-import React from 'react';
-import { socialMediaData } from '../constants/data';
-import style from '../styles';
+import React from "react";
+import { socialMediaData } from "../constants/data";
+import style from "../styles";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const SocialMediaLinks = () => {
   return (
     <div>
-    <div className={`${style.SocialMediaLinksContainer}`}>
-
-      {
-          socialMediaData.map((data, index) => (
-
-            <div key={index} className={`${style.SocialMediaLinksWrapper}`}>
-
-                 <img src={data.icon} className={`${style.SocialMediaLinksIcon} text-white`}/>
-          
-                <span className={`${style.SocialMediaLinksTitle}`}>{data.title}</span>
-
-                <p className={`${style.SocialMediaLinksDescription}`} >
-                    {data.description}
-                </p>
+      <div className={`${style.SocialMediaLinksContainer}`}>
+        {socialMediaData.map((data, index) => (
+          <div key={index} className={`${style.SocialMediaLinksWrapper}`}>
+            <div className={`${style.SocialMediaLinksIconWrapper}`}>
+              <data.icon className={`${style.SocialMediaLinksIcon}`} />
             </div>
-          ))
-    
-    }
-    </div>
+
+            <span className={`${style.SocialMediaLinksTitle}`}>
+              {data.title}
+            </span>
+
+            <p className={`${style.SocialMediaLinksDescription}`}>
+              {data.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

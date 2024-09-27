@@ -72,16 +72,16 @@ function MyApplicationsTabView() {
       </div>
 
       <div className="dark:divide-borderBlue divide-borderLight border border-borderBlue rounded-3xl">
-        <table className="divide dark:divide-borderBlue divide-borderLight font-poppins text-xs rounded-3xl overflow-hidden">
+        <table className="divide dark:divide-borderBlue divide-borderLight font-poppins text-sm rounded-3xl overflow-hidden">
           <thead className="bg-borderLight dark:bg-darkBgComponents">
             <tr>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+              <th className="px-7 py-3 text-left font-medium text-textBlack dark:text-textWhite">
                 ID
               </th>
               <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
                 Name
               </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+              <th className="px-5 py-3 text-left font-medium text-textBlack dark:text-textWhite">
                 Merchant Code
               </th>
               <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
@@ -98,7 +98,7 @@ function MyApplicationsTabView() {
               </th>
             </tr>
           </thead>
-          <tbody className="dark:bg-darkBgHover bg-white divide-y dark:divide-borderBlue divide-borderLight dark:text-textWhite">
+          <tbody className="dark:bg-darkBgHover bg-white divide-y dark:divide-borderBlue divide-borderLight dark:text-textWhite text-sm">
             {data.map((item) => (
               <TableRow key={item.id} {...item} activeTab={activeTab} />
             ))}

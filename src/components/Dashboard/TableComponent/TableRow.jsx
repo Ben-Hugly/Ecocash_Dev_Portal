@@ -29,7 +29,7 @@ function TableRow({
         <SecretText text={apiKey} />
       </td>
       <td className="px-4 py-4 whitespace-nowrap text-textBlack dark:text-textWhite font-poppins text-left">
-        <div className="flex flex-row gap-2 items-center">
+        <div className="flex flex-row gap-3 items-center">
           <div
             className={
               status === "Live"
@@ -37,32 +37,50 @@ function TableRow({
                 : "bg-dangerLight w-2 h-2 rounded-full"
             }
           ></div>
-          <span className="text-xs dark:text-textWhite">{status}</span>
+          <span className="text-sm dark:text-textWhite">{status}</span>
         </div>
       </td>
       <td className="px-4 py-4 whitespace-nowrap text-gray-900 dark:text-textWhite font-poppins">
         {category}
       </td>
       <td className="px-4 py-4 whitespace-nowrap text-gray-900 flex justify-end">
-        <div className="flex flex-row items-center justify-between gap-4 text-headerTextLight">
-          <span className="text-xs  hover:scale-105 hover:text-textBlue font-poppins">
+        <div className="flex flex-row items-center justify-between gap-6 text-headerTextLight">
+          <span className="text-sm  hover:scale-105 hover:text-textBlue font-poppins">
             View Transactions
           </span>
-          <MdEdit size={16} />
+          <MdEdit
+            size={20}
+            className=" hover:text-textBlue font-poppins hover:scale-105"
+          />
 
           {activeTab === "Archived" ? (
-            <div className="flex flex-row gap-3">
-              <FaTrashArrowUp size={16} />
-              <FaTrashCan size={16} />
+            <div className="flex flex-row gap-4">
+              <FaTrashArrowUp
+                size={20}
+                className=" hover:text-textBlue font-poppins hover:scale-105"
+              />
+              <FaTrashCan
+                size={20}
+                className=" hover:text-textBlue font-poppins hover:scale-105"
+              />
             </div>
           ) : (
-            <div className="flex flex-row gap-3">
-              <GrPowerReset size={16} />
-              <MdArchive size={16} />
+            <div className="flex flex-row gap-4 ">
+              <GrPowerReset
+                size={20}
+                className=" hover:text-textBlue font-poppins hover:scale-105"
+              />
+              <MdArchive
+                size={20}
+                className=" hover:text-textBlue font-poppins hover:scale-105"
+              />
             </div>
           )}
 
-          <IoChevronForward size={18} className="text-textRed" />
+          <IoChevronForward
+            size={20}
+            className="text-dangerLight  hover:scale-105 "
+          />
         </div>
       </td>
     </tr>

@@ -27,6 +27,17 @@ import {
   google,
 } from "../assets";
 
+import {
+  byi,
+  c2b,
+  b2c,
+  b2b,
+  rev,
+  payment,
+  refund,
+  lookup,
+} from "../assets/DashboardDocumentationOverview";
+
 const archivedApplicationsData = [
   {
     id: "1892",
@@ -99,27 +110,27 @@ const GettingStartedData = [
 
 const socialMediaData = [
   {
-    icon: whatsapp,
+    icon: IoLogoWhatsapp,
     title: "WhatsApp",
     description: "Connect with the EcoCash Developers community on WhatsApp",
   },
   {
-    icon: facebook,
+    icon: FaFacebook,
     title: "Facebook",
     description: "Follow @EcoCashDev on Facebook",
   },
   {
-    icon: youtube,
+    icon: FaYoutube,
     title: "YouTube",
     description: "Subscribe to EcoCash Developers on YouTube",
   },
   {
-    icon: x,
+    icon: BsTwitterX,
     title: "X",
     description: "Follow @EcoCashDev on X",
   },
   {
-    icon: linkedin,
+    icon: FaLinkedinIn,
     title: "LinkedIn",
     description: "Connect with the EcoCash Developers community on LinkedIn",
   },
@@ -206,17 +217,17 @@ const UseCaseDropdownData = [
 
 const overviewApiOverviewData = [
   {
-    image: useCase1,
+    image: payment,
     title: "Payments",
     content: "Libraries to assist with integrations",
   },
   {
-    image: useCase2,
+    image: refund,
     title: "Refunds",
     content: "Libraries to assist with integrations",
   },
   {
-    image: useCase3,
+    image: lookup,
     title: "Transactions Lookup",
     content: "Generate API Key",
   },
@@ -224,27 +235,27 @@ const overviewApiOverviewData = [
 
 const overviewDeveloperData = [
   {
-    image: useCase1,
+    image: byi,
     title: "Building Your Integration",
     content: "Generate API Key",
   },
   {
-    image: useCase1,
+    image: c2b,
     title: "C2B",
     content: "Customer-To-Business transactions",
   },
   {
-    image: useCase2,
+    image: b2c,
     title: "B2C",
     content: "Business-To-Customer Transactions",
   },
   {
-    image: useCase3,
+    image: b2b,
     title: "B2B",
     content: "Business-To-Business Transactions",
   },
   {
-    image: useCase4,
+    image: rev,
     title: "Reversals",
     content: "Initiate a reversal on a transaction",
   },

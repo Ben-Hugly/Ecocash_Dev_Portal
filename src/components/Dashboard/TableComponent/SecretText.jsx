@@ -12,7 +12,7 @@ const SecretText = ({ text }) => {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-4">
       <span className="text-gray-800 dark:text-textWhite">
         {isRevealed ? text : "######"}
       </span>
@@ -21,9 +21,9 @@ const SecretText = ({ text }) => {
         aria-label="Toggle visibility"
       >
         {isRevealed ? (
-          <FaEyeSlash size={16} className="text-headerTextLight mx-1" />
+          <FaEyeSlash size={20} className="text-headerTextLight mx-1" />
         ) : (
-          <FaEye size={16} className="text-headerTextLight mx-1" />
+          <FaEye size={20} className="text-headerTextLight mx-1" />
         )}
       </button>
       <button

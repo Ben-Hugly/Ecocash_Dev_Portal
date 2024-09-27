@@ -155,10 +155,10 @@ const styles = {
   /** SocialMediaLinks **/
   SocialMediaLinksContainer:
     "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mt-10 mb-10 justify-center items-center px-4 md:px-0",
-  SocialMediaLinksWrapper: "flex flex-col items-center justify-center",
-  SocialMediaLinksIcon: "h-[36px] w-[36px] dark:text-textWhite text-primary",
+  SocialMediaLinksWrapper: "flex flex-col items-center justify-center ",
+  SocialMediaLinksIcon: "h-[36px] w-[36px] dark:text-textWhite text-textBlack",
   SocialMediaLinksDescription:
-    "mt-2 text-textBlack dark:text-textWhite font-thin font-poppins text-[14px] md:text-[14px] w-full md:w-[230px] text-center",
+    "mt-2 text-textBlack dark:text-textWhite font-thin font-poppins text-[14px] md:text-[14px] w-full md:w-[220px] text-center opacity-75",
   SocialMediaLinksTitle:
     "text-textBlack dark:text-textWhite font-poppins text-[16px] font-semibold mt-2",
 

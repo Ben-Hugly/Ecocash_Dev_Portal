@@ -42,7 +42,7 @@ const applicationsData = [
 
 const MyApplications = () => {
   return (
-    <div className=" bg-componentsBackgroundLight dark:bg-[#1f303f] p-6 rounded-3xl text-textBlack dark:text-textWhite">
+    <div className=" bg-componentsBackgroundLight dark:bg-componentsBackgroundDark p-6 rounded-3xl text-textBlack dark:text-textWhite">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold text-left  text-textBlack dark:text-textWhite font-poppins">
           My Applications

@@ -21,10 +21,10 @@ function Footer() {
               Manage cookies{" "}
             </a>
           </div>
-          <div className={`${style.footerLinkWrapper} space-x-0 gap-3`}>
+          <div className={`${style.footerLinkWrapper} space-x-0 `}>
             <span>Digital Solution by </span>
             <img src={hugly} width={36} height={36} />
-            <span className="text-sm font-medium">Hugly.Studio</span>
+            <span className="text-sm font-medium ">Hugly.Studio</span>
           </div>
         </div>
       </div>

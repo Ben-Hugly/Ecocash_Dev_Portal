@@ -1,6 +1,7 @@
 import React from "react";
 import OverviewDeveloperTools from "./OverviewDeveloperTools";
 import OverviewApiReference from "./OverviewApiReference";
+import { Footer, SocialMediaLinks } from "../../components";
 import RightSideBar from "./RightSideBar";
 
 const components = [
@@ -8,9 +9,9 @@ const components = [
   { name: "API Reference", id: "api-reference" },
 ];
 
-function Overview() {
+function DocumentationOverview() {
   return (
-    <div className="flex flex-row">
+    <div className="grid grid-cols-[4fr_1fr] grid-flow-col">
       <div className="flex flex-col gap-12">
         <div className="flex flex-col text-left p-2 ml-3">
           <span className="text-[45px] font-poppins font-semibold text-textBlack dark:text-textWhite">
@@ -23,10 +24,12 @@ function Overview() {
         </div>
         <OverviewDeveloperTools id="developer-tools" />
         <OverviewApiReference id="api-reference" />
+        <SocialMediaLinks />
+        <Footer />
       </div>
       <RightSideBar components={components} />
     </div>
   );
 }
 
-export default Overview;
+export default DocumentationOverview;

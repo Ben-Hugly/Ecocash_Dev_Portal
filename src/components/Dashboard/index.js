@@ -22,7 +22,6 @@ import TransactionsTable from "./TransactionsTable";
 import TransactionsFilter from "./TransactionsFilter";
 import Pagination from "./Pagination";
 import MyAppUsersAndPermissions from "./MyAppUsersAndPermissions";
-import Overview from "./Overview";
 import RightSideBar from "./RightSideBar";
 import BuildingYourIntegration from "./BuildingYourIntegration";
 import VideoPlay from "./VideoPlay";
@@ -33,7 +32,9 @@ import Payments from "./Payments";
 import Reference from "./Reference";
 import SampleSnippets from "./SampleSnippets";
 import AddMember from "./Modal/AddMember";
-
+import DashboardOverview from "./DashboardOverview";
+import DashboardMyApplications from "./DashboardMyApplications";
+import DocumentationOverview from "./DocumentationOverview";
 export {
   ArchivedApplications,
   CodeSnippet,
@@ -59,7 +60,7 @@ export {
   TransactionsFilter,
   Pagination,
   MyAppUsersAndPermissions,
-  Overview,
+  DocumentationOverview,
   RightSideBar,
   BuildingYourIntegration,
   VideoPlay,
@@ -70,4 +71,6 @@ export {
   Reference,
   SampleSnippets,
   AddMember,
+  DashboardOverview,
+  DashboardMyApplications,
 };
