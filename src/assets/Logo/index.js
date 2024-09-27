@@ -1,11 +1,4 @@
-import logoDark from '../Logo/logoDark.svg';
-import logoLight from '../Logo/logoLight.svg';
-import logoDashboard from '../Logo/logoDashboard.svg'
+import logoDark from "../Logo/logoDark.svg";
+import logoLight from "../Logo/logoLight.svg";
 
-
-export {
-    
-    logoDark,
-    logoLight, 
-    logoDashboard,   
-};
+export { logoDark, logoLight };
