@@ -19,7 +19,7 @@ function Profile({ handleModalClose }) {
       >
         <TfiClose size={12} className="text-textBlack" />
       </button>
-      <div className="p-6 w-full max-w-[300px] shadow-lg dark:bg-componentsBackgroundDark bg-backgroundLight border rounded-xl border-buttonBluePastelLight dark:border-borderBlue text-textBlack dark:text-textWhite mt-20 mr-3">
+      <div className="p-6 w-full max-w-[270px] shadow-lg dark:bg-componentsBackgroundDark bg-backgroundLight border rounded-xl border-buttonBluePastelLight dark:border-borderBlue text-textBlack dark:text-textWhite mt-20 mr-3">
         <div className="flex items-center justify-center flex-col font-poppins text-textBlack dark:text-textWhite">
           <img src={profile} className="w-16 h-16" />
           <span className="text-sm font-medium">{"Inno Reza"}</span>
@@ -27,7 +27,7 @@ function Profile({ handleModalClose }) {
             {"inno@hughly.studo"}
           </span>
         </div>
-        <div className="flex flex-row justify-between items-center font-poppins mt-4 text-textBlack dark:text-textWhite">
+        <div className="flex flex-row justify-between items-center font-poppins mt-4 text-textBlack dark:text-textWhite  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2 rounded-2xl hover:scale-105">
           <div className="flex flex-row items-center font-poppins">
             <WiMoonAltThirdQuarter size={20} className="text-pearlBlue" />
             <span className="ml-3 text-sm">Theme</span>
@@ -36,7 +36,7 @@ function Profile({ handleModalClose }) {
           <IoChevronForwardOutline size={16} className="text-dangerDark" />
         </div>
 
-        <div className="flex flex-row justify-between items-center font-poppins mt-4 text-textBlack dark:text-textWhite">
+        <div className="flex flex-row justify-between items-center font-poppins mt-4 text-textBlack dark:text-textWhite  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2 rounded-2xl hover:scale-105">
           <div className="flex flex-row items-center font-poppins">
             <LuSettings2 size={20} className="text-pearlBlue" />
             <span className="ml-3 text-sm">Settings</span>
@@ -45,7 +45,7 @@ function Profile({ handleModalClose }) {
           <IoChevronForwardOutline size={16} className="text-dangerDark" />
         </div>
 
-        <div className="flex flex-row justify-between items-center font-poppins mt-4 border-b border-t  dark:bg-componentsBackgroundDark bg-backgroundLight text-textBlack dark:text-textWhite  border-buttonBluePastelLight dark:border-borderBlue py-3">
+        <div className="flex flex-row justify-between items-center font-poppins mt-4 border-b border-t  dark:bg-componentsBackgroundDark bg-backgroundLight text-textBlack dark:text-textWhite  border-buttonBluePastelLight dark:border-borderBlue py-3  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2  hover:scale-105">
           <div className="flex flex-row items-center font-poppins">
             <TbWorld size={20} className="text-pearlBlue" />
             <span className="ml-3 text-sm">Community Profile</span>
@@ -54,7 +54,7 @@ function Profile({ handleModalClose }) {
           <IoChevronForwardOutline size={16} className="text-dangerDark" />
         </div>
 
-        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite">
+        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2 rounded-2xl hover:scale-105">
           <img src={profile} className="w-6 h-6" />
           <div className="flex flex-col ml-3 ">
             <span className="text-[13px]">Innocent Reza</span>
@@ -63,7 +63,7 @@ function Profile({ handleModalClose }) {
             </span>
           </div>
         </div>
-        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite justify-between">
+        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite justify-between  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2 rounded-2xl hover:scale-105">
           <div className="flex flex-row  items-center">
             <img src={profile} className="w-6 h-6" />
             <div className="flex flex-col ml-3 ">
@@ -77,11 +77,11 @@ function Profile({ handleModalClose }) {
           <MdOutlineDone size={16} className="text-dangerDark" />
         </div>
 
-        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite">
+        <div className="flex flex-row  items-center font-poppins mt-4 text-textBlack dark:text-textWhite  hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2 rounded-2xl hover:scale-105">
           <FaPlus size={20} className="text-pearlBlue" />
           <span className="ml-3 text-sm">Add Account</span>
         </div>
-        <div className="flex flex-row items-center font-poppins mt-4 border-t  dark:bg-componentsBackgroundDark bg-backgroundLight text-textBlack dark:text-textWhite  border-buttonBluePastelLight dark:border-borderBlue  pt-3">
+        <div className="flex flex-row items-center font-poppins mt-4 border-t  dark:bg-componentsBackgroundDark bg-backgroundLight text-textBlack dark:text-textWhite  border-buttonBluePastelLight dark:border-borderBlue  pt-3 hover:bg-lightBgHover dark:hover:bg-darkBgHover p-2  hover:scale-105 rounded-b-2xl">
           <MdLogout size={20} className="text-pearlBlue" />
           <span className="ml-3 text-sm">Logout</span>
         </div>

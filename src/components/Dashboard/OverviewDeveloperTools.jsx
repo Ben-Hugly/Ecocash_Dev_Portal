@@ -4,11 +4,14 @@ import { overviewDeveloperData } from "../../constants/data";
 
 const OverviewDeveloperTools = ({ id }) => {
   return (
-    <div id={id} className="bg-componentsBackgroundDark rounded-3xl p-5">
+    <div
+      id={id}
+      className="bg-componentsBackgroundLight dark:bg-componentsBackgroundDark rounded-3xl p-5"
+    >
       <h2 className="dark:text-textWhite text-textBlack text-left font-poppins text-[28px] font-semibold p-4">
         Developer Tools
       </h2>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xs:grid-cols-1">
         {overviewDeveloperData.map((info, index) => (
           <OverviewFeatureCard key={index} {...info} />
         ))}

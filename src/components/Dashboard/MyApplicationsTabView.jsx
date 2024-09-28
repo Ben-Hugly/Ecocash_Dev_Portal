@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import TableRow from "./TableComponent/TableRow";
+import { Link } from "react-router-dom";
 
 function MyApplicationsTabView() {
   const tabs = ["Live", "Archived"];
@@ -49,10 +50,13 @@ function MyApplicationsTabView() {
             My Applications
           </h2>
           <div className="flex items-center font-poppins text-sm hover:scale-105">
-            <button className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center">
+            <Link
+              to="/dashboard/myapps/new"
+              className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center"
+            >
               {activeTab === "Archived" ? "Restore All" : "New Application"}
               {activeTab === "Archived" ? "" : <FaPlus className="ml-3" />}
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -71,39 +75,41 @@ function MyApplicationsTabView() {
         </div>
       </div>
 
-      <div className="dark:divide-borderBlue divide-borderLight border border-borderBlue rounded-3xl">
-        <table className="divide dark:divide-borderBlue divide-borderLight font-poppins text-sm rounded-3xl overflow-hidden">
-          <thead className="bg-borderLight dark:bg-darkBgComponents">
-            <tr>
-              <th className="px-7 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                ID
-              </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                Name
-              </th>
-              <th className="px-5 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                Merchant Code
-              </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                API Key
-              </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                Status
-              </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                Category
-              </th>
-              <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody className="dark:bg-darkBgHover bg-white divide-y dark:divide-borderBlue divide-borderLight dark:text-textWhite text-sm">
-            {data.map((item) => (
-              <TableRow key={item.id} {...item} activeTab={activeTab} />
-            ))}
-          </tbody>
-        </table>
+      <div className="dark:divide-borderBlue divide-borderLight border border-borderBlue rounded-3xl overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide dark:divide-borderBlue divide-borderLight font-poppins text-sm">
+            <thead className="bg-borderLight dark:bg-darkBgComponents">
+              <tr>
+                <th className="px-3 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  ID
+                </th>
+                <th className="px-3 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  Name
+                </th>
+                <th className="px-3 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  Merchant Code
+                </th>
+                <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  API Key
+                </th>
+                <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  Status
+                </th>
+                <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  Category
+                </th>
+                <th className="px-6 py-3 text-left font-medium text-textBlack dark:text-textWhite">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody className="dark:bg-darkBgHover bg-white divide-y dark:divide-borderBlue divide-borderLight dark:text-textWhite text-sm">
+              {data.map((item) => (
+                <TableRow key={item.id} {...item} activeTab={activeTab} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

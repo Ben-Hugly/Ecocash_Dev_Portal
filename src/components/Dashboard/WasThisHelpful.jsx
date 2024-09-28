@@ -7,8 +7,8 @@ function WasThisHelpful() {
     <div className="flex flex-col gap-3 items-center  text-textBlack dark:text-white text-left font-poppins">
       <span className="text-sm opacity-80 font-thin">Was this helpful?</span>
       <div className="flex gap-3">
-        <AiOutlineLike />
-        <AiOutlineDislike />
+        <AiOutlineLike size={24} />
+        <AiOutlineDislike size={24} />
       </div>
       <div className="flex items-center">
         <span className="text-sm font-medium text-gray-500">

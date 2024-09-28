@@ -1,5 +1,5 @@
 import React from "react";
-import DocumentationOverviewCardSmall from "./Cards/DocumentationOverviewCardSmall";
+import { DocumentationOverviewCardSmall } from "./Cards";
 
 function DocumentationOverviewSmall() {
   const cards = [

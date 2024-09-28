@@ -3,6 +3,7 @@ import style from "../../styles";
 import Lottie from "react-lottie";
 const animationData = await import("../../assets/success.json");
 import { IoChevronForward } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function EditSuccessful() {
   const defaultOptions = {
@@ -25,18 +26,22 @@ function EditSuccessful() {
         </div>
 
         <div className="flex flex-row items-center justify-between gap-2 border-t  border-buttonBluePastelLight dark:border-borderBlue mt-4 mb-5 ">
-          <button
+          <Link
+            to={"/dashboard/myapps"}
             className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-10 h-[48px] rounded-full hover:bg-darkBgHover text-[12px]`}
           >
             Close
-          </button>
+          </Link>
 
-          <button className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[12px] h-[48px] w-full hover:scale-105 flex justify-between items-center rounded-full mt-10 px-2">
+          <Link
+            to={"/dashboard/myapps"}
+            className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[12px] h-[48px] w-full hover:scale-105 flex justify-between items-center rounded-full mt-10 px-2"
+          >
             <span className="flex-grow text-center ">
               Continue To My Application
             </span>
             <IoChevronForward size={20} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

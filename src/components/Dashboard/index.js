@@ -7,7 +7,7 @@ import DocumentationOverviewSmall from "./DocumentationOverviewSmall";
 import Welcome from "./Welcome";
 import NavbarDashboard from "./NavbarDashboard";
 import ThemeToggle from "./ThemeToggle";
-import AddNewApplication from "./AddNewApplication";
+import AddNewApplicationForm from "./AddNewApplicationForm";
 import NewAppSuccess from "./NewAppSuccess";
 import ApiKeyDisplay from "./ApiKeyDisplay";
 import MyApplicationsTabView from "./MyApplicationsTabView";
@@ -45,7 +45,7 @@ export {
   Welcome,
   NavbarDashboard,
   ThemeToggle,
-  AddNewApplication,
+  AddNewApplicationForm,
   NewAppSuccess,
   ApiKeyDisplay,
   MyApplicationsTabView,

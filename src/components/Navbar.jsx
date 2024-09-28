@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineRight, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { RiLogoutCircleRLine } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { Axios } from "../config";
 import style from "../styles";
@@ -22,11 +21,16 @@ function Navbar() {
   return (
     <nav className={`${style.navbarContainer}`}>
       <div className={`${style.navbarWrapper}`}>
-        <div className={`${style.navbarIconWrapper}`}>
+        <div className={`${style.navbarIconWrapper} relative`}>
           <img
-            src={theme === "light" ? logoLight : logoDark}
+            src={logoLight} // Change logo based on the theme
             alt="EcoCash Developer"
-            className={`${style.navbarLogo}`}
+            className={`${style.navbarLogo} block dark:hidden`}
+          />
+          <img
+            src={logoDark} // Change logo based on the theme
+            alt="EcoCash Developer"
+            className={`${style.navbarLogo} hidden dark:block`}
           />
         </div>
 

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import SecretText from "../../Dashboard/TableComponent/SecretText";
 import { MdEdit, MdArchive } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import { FaTrashCan, FaTrashArrowUp } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function TableRow({
   id,
@@ -48,10 +49,12 @@ function TableRow({
           <span className="text-sm  hover:scale-105 hover:text-textBlue font-poppins">
             View Transactions
           </span>
-          <MdEdit
-            size={20}
-            className=" hover:text-textBlue font-poppins hover:scale-105"
-          />
+          <Link to="/dashboard/myapps/edit">
+            <MdEdit
+              size={20}
+              className=" hover:text-textBlue font-poppins hover:scale-105"
+            />
+          </Link>
 
           {activeTab === "Archived" ? (
             <div className="flex flex-row gap-4">
@@ -76,11 +79,12 @@ function TableRow({
               />
             </div>
           )}
-
-          <IoChevronForward
-            size={20}
-            className="text-dangerLight  hover:scale-105 "
-          />
+          <Link to="/dashboard/myapps/details">
+            <IoChevronForward
+              size={20}
+              className="text-dangerLight  hover:scale-105"
+            />
+          </Link>
         </div>
       </td>
     </tr>

@@ -168,7 +168,7 @@ const styles = {
   footerBorder:
     "border-t border-buttonBluePastelLight dark:border-borderBlue flex flex-col sm:flex-row justify-between items-center z-0",
   footerBorderWrapper:
-    "max-w-[1280px] mx-auto w-full px-4 sm:px-6 md:px-0 z-0 relative",
+    "max-w-[1680px] mx-auto w-full px-4 sm:px-6 md:px-0 z-0 relative",
   footerLinkWrapper:
     "flex items-center space-x-4 mb-2 sm:mb-0 mt-5 text-[12px]",
 
@@ -211,7 +211,7 @@ const styles = {
   smallTextBlue:
     "text-textDimBlue font-poppins text-[14px] hover:text-gray-600 flex justify-between items-center font-light",
 
-  lgText: " text-black dark:text-white font-poppins text-[18px] font-bold",
+  lgText: "text-black dark:text-white font-poppins text-[18px] font-bold",
 
   otpTextOne:
     "text-textBlack dark:text-textWhite  font-poppins text-[14px] block text-left ml-2 mb-4 font-bold",

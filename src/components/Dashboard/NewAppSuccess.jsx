@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 const animationData = await import("../../assets/success.json");
 import { IoChevronForward } from "react-icons/io5";
 import { ApiKeyDisplay } from "../Dashboard";
+import { Link } from "react-router-dom";
 
 function NewAppSuccess() {
   const defaultOptions = {
@@ -31,15 +32,15 @@ function NewAppSuccess() {
 
         <div className="border-t border-buttonBluePastelLight dark:border-borderBlue w-full px-2"></div>
 
-        <button
-          type="submit"
+        <Link
+          to={"/dashboard/myapps"}
           className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full hover:scale-105 flex justify-between items-center rounded-full  mb-6"
         >
           <span className="flex-grow text-center">
             Continue To My Application
           </span>
           <IoChevronForward size={24} className="mr-4" />
-        </button>
+        </Link>
       </div>
     </div>
   );

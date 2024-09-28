@@ -1,17 +1,12 @@
-import React from "react";
-import {
-  MyApplicationsTabView,
-  DocumentationOverviewSmall,
-} from "../Dashboard";
-import { SocialMediaLinks, Footer } from "../../components";
+import React, { useState } from "react";
+import { MyApplicationsTabView } from "../Dashboard";
+import { MyApplicationDetails } from "../Dashboard";
 
 function DashboardMyApplications() {
+  const [showDetails, setShowDetails] = useState(false);
   return (
     <div className="flex flex-col gap-12 p-4">
-      <MyApplicationsTabView />
-      <DocumentationOverviewSmall />
-      <SocialMediaLinks />
-      <Footer />
+      {showDetails ? <MyApplicationDetails /> : <MyApplicationsTabView />}
     </div>
   );
 }

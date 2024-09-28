@@ -2,10 +2,6 @@
 import React from "react";
 import { socialMediaData } from "../constants/data";
 import style from "../styles";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
-import { RiTwitterXLine } from "react-icons/ri";
-import { FaLinkedinIn } from "react-icons/fa";
 
 const SocialMediaLinks = () => {
   return (

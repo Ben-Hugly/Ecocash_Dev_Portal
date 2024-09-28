@@ -92,14 +92,14 @@ function MyAppUsersAndPermissions() {
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2">
+    <div className="p-4">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2">
         {/* Search and Filter section */}
         <div className="flex items-center gap-2 w-full">
-          <div className="relative ">
+          <div className="relative w-full max-w-xs">
             <input
               type="text"
-              className="shadow-md rounded-lg py-4 pl-10 pr-3 text-textBlack dark:text-white hover:border-borderBlueSecond font-poppins text-[14px] font-thin h-[44px] w-[550px] dark:bg-darkBgComponents"
+              className="shadow-md rounded-lg py-4 pl-10 pr-3 text-textBlack dark:text-white hover:border-borderBlueSecond font-poppins text-[14px] font-thin h-[44px] w-full dark:bg-darkBgComponents"
               placeholder="Search Members"
               value={searchTerm}
               onChange={(e) => handleSearchTermChange(e.target.value)}
@@ -137,8 +137,8 @@ function MyAppUsersAndPermissions() {
         </div>
       </div>
 
-      <div className="container mx-auto ">
-        <table className="table-auto w-full">
+      <div className="container mx-auto overflow-x-auto">
+        <table className="table-auto w-full min-w-[600px]">
           <thead>
             <tr className="bg-bgWhite dark:bg-backgroundDark text-left text-textBlack dark:text-textWhite font-poppins text-[13px] border-b border-buttonBluePastelLight dark:border-borderBlue h-[68px]">
               <th className="px-4 py-2">
@@ -159,7 +159,7 @@ function MyAppUsersAndPermissions() {
                 key={user.id}
                 className="border-t border-buttonBluePastelLight dark:border-borderBlue font-poppins font-thin text-sm h-[56px] text-textBlack dark:text-textWhite"
               >
-                <td className="px-2 py-2 text-left ">
+                <td className="px-2 py-2 text-left">
                   <div className="flex flex-row items-center gap-4">
                     <img src={profile} width={44} height={44} alt="Profile" />
                     <div className="flex flex-col">
@@ -208,7 +208,7 @@ function MyAppUsersAndPermissions() {
         </table>
 
         {/* Pagination Section */}
-        <div className="mt-4 flex items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2 text-textBlack">
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2 text-textBlack">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <button

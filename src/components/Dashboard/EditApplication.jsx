@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "../../styles";
 import { MdDone } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function EditApplication() {
   const [appName, setAppName] = useState("");
@@ -112,20 +113,18 @@ function EditApplication() {
         </div>
 
         <div className="flex flex-row items-center justify-between gap-4 border-t  border-buttonBluePastelLight dark:border-borderBlue p-3 ">
-          <button
-            type="submit"
+          <Link
+            to={"/dashboard/myapps"}
             className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-5 h-16 rounded-full hover:bg-darkBgHover`}
           >
-            {" "}
             Discard
-          </button>
-          <button
-            type="submit"
+          </Link>
+          <Link
+            to={"/dashboard/myapps/editsucess"}
             className={`${style.buttons} mt-5 h-16 rounded-full`}
           >
-            {" "}
             Save
-          </button>
+          </Link>
         </div>
       </form>
     </div>

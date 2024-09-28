@@ -1,6 +1,7 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
-function Welcome({ username, handleAddNewApp }) {
+import { Link } from "react-router-dom";
+function Welcome({ username }) {
   return (
     <div className="flex flex-row items-center justify-between">
       <div className="flex flex-col text-left p-2 ml-3">
@@ -13,13 +14,13 @@ function Welcome({ username, handleAddNewApp }) {
         </span>
       </div>
 
-      <button
+      <Link
+        to={"/dashboard/myapps/new"}
         className="bg-textDimBlue hover:bg-textBlue text-white font-poppins  px-4 py-2 focus:outline-none      focus:shadow-outline h-[44px] rounded-3xl flex items-center text-sm mr-2"
-        onClick={handleAddNewApp}
       >
         New Application
-        <FiPlus className="ml-2" size={20} />
-      </button>
+        <FiPlus className="ml-2" size={24} />
+      </Link>
     </div>
   );
 }

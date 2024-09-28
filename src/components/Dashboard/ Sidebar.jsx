@@ -5,21 +5,14 @@ import { logoDark, logoLight } from "../../assets/Logo";
 import style from "../../styles";
 import { GoHomeFill } from "react-icons/go";
 import { MdFolderSpecial, MdArrowRight } from "react-icons/md";
+import { IoDocumentText } from "react-icons/io5";
 
-const Sidebar = ({ onButtonSelect }) => {
+const Sidebar = () => {
   const [isDevToolsOpen, setDevToolsOpen] = useState(false);
   const [isApiRefOpen, setApiRefOpen] = useState(false);
-  const [overviewActive, setOverviewActive] = useState(false);
+  const [overviewActive, setOverviewActive] = useState(true);
   const [myAppsActive, setMyAppsActive] = useState(false);
-
-  const [selectedButton, setSelectedButton] = useState("");
-
-  const handleClick = (buttonName) => {
-    setSelectedButton(buttonName);
-    onButtonSelect(buttonName); // Pass button name to parent component
-  };
-  //logo change based on the theme
-  const theme = localStorage.getItem("theme");
+  const [documentationActive, setDocumentationActive] = useState(false);
 
   const toggleDevTools = () => {
     setDevToolsOpen(!isDevToolsOpen);
@@ -28,86 +21,129 @@ const Sidebar = ({ onButtonSelect }) => {
 
   const toggleApiRef = () => {
     setApiRefOpen(!isApiRefOpen);
-    if (isDevToolsOpen) setDevToolsOpen(false); // Close Developer Tools if open
+    if (isDevToolsOpen) setDevToolsOpen(false);
   };
 
   const toggleOverview = () => {
-    setOverviewActive(!overviewActive);
-    if (myAppsActive) setMyAppsActive(false); // Close Developer Tools if open
+    if (!overviewActive) {
+      setOverviewActive(true);
+      if (myAppsActive) setMyAppsActive(false);
+      if (documentationActive) setDocumentationActive(false);
+    }
   };
 
   const toggleMyApps = () => {
-    setMyAppsActive(!myAppsActive);
-    if (overviewActive) setOverviewActive(false); // Close Developer Tools if open
+    if (!myAppsActive) {
+      setMyAppsActive(true);
+      if (overviewActive) setOverviewActive(false);
+      if (documentationActive) setDocumentationActive(false);
+    }
   };
 
+  const toggleDocumentation = () => {
+    if (!documentationActive) {
+      setDocumentationActive(true);
+      if (overviewActive) setOverviewActive(false);
+      if (myAppsActive) setMyAppsActive(false);
+    }
+  };
   return (
     <div className="bg-white dark:bg-darkBgComponents flex flex-col p-4 h-full ">
-      <div className="flex justify-between items-center  py-3">
+      <div className="flex justify-between items-center py-3 relative">
         <img
-          src={theme === "light" ? logoLight : logoDark}
+          src={logoLight} // Change logo based on the theme
           alt="EcoCash Developer"
-          className={`${style.navbarLogo}`}
-          onClick={() => alert(theme)}
+          className={`${style.navbarLogo} block dark:hidden`}
+        />
+        <img
+          src={logoDark} // Change logo based on the theme
+          alt="EcoCash Developer"
+          className={`${style.navbarLogo} hidden dark:block`}
         />
       </div>
 
       <div className="mt-5 border-b border-t border-borderLight dark:border-borderBlue ">
-        <ul className="space-y-3 font-poppins text-lg">
+        <ul className="space-y-3 font-poppins text-lg py-2">
           <li
-            className="hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl"
+            className={`hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl ${
+              overviewActive
+                ? "bg-lightBgHover dark:bg-darkBgHover rounded-3xl"
+                : ""
+            }`}
             onClick={toggleOverview}
           >
-            <div className="flex flex-row items-center">
-              {overviewActive ? <MdArrowRight size={24} color="#037aa9" /> : ""}
-              <button
-                className="flex items-center space-x-3 px-2 py-2"
-                onClick={() => handleClick("overview")}
-              >
-                <GoHomeFill size={16} color="#035AA9" />
-                <span className="text-[15px] font-poppins text-gray-900 dark:text-white">
-                  Overview
-                </span>
-              </button>
-            </div>
+            <Link
+              to="/dashboard/home"
+              className="flex items-center space-x-3 px-2 py-4"
+            >
+              {overviewActive ? <MdArrowRight size={28} color="#037aa9" /> : ""}
+              <GoHomeFill size={20} color="#035AA9" />
+              <span className="text-[15px] font-poppins text-gray-900 dark:text-white">
+                Overview
+              </span>
+            </Link>
           </li>
           <li
-            className="hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:rounded-2xl"
+            className={`hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:rounded-2xl ${
+              myAppsActive
+                ? "bg-lightBgHover dark:bg-darkBgHover rounded-3xl"
+                : ""
+            }`}
             onClick={toggleMyApps}
           >
-            <div className="flex flex-row items-center">
-              {myAppsActive ? <MdArrowRight size={24} color="#037aa9" /> : ""}
-              <button
-                className="flex items-center space-x-3 px-2 py-2"
-                onClick={() => handleClick("myApplications")}
-              >
-                <MdFolderSpecial size={16} color="#035AA9" />
-                <span className="text-[15px] font-poppins text-gray-900 dark:text-white">
-                  My Applications
-                </span>
-              </button>
-            </div>
+            <Link
+              to="/dashboard/myapps"
+              className="flex items-center space-x-3 px-2 py-4"
+            >
+              {myAppsActive ? <MdArrowRight size={28} color="#037aa9" /> : ""}
+              <MdFolderSpecial size={20} color="#035AA9" />
+              <span className="text-[15px] font-poppins font-thin text-gray-900 dark:text-white">
+                My Applications
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
-      <span className="text-sm font-poppins font-thin p-3 text-left text-textBlack dark:text-textWhite">
-        Documentation
-      </span>
-      <div className="bg-bgWhite dark:bg-backgroundDark rounded-2xl p-4 ml-2 ">
-        <button className="flex items-center space-x-3 px-2 py-2 border-b border-borderLight w-full   hover:bg-lightBgHover dark:border-borderBlue  dark:hover:bg-darkBgHover hover:rounded-3xl  hover:scale-110">
-          <span
-            className="text-[14px] font-poppins text-gray-900 dark:text-white"
-            onClick={() => handleClick("documentationOverview")}
-          >
+
+      <div
+        className="flex flex-row items-center py-3"
+        onClick={toggleDocumentation}
+      >
+        <Link
+          to="/dashboard/documentation"
+          className={`flex items-center space-x-3 px-2 py-5 pr-7 hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl w-full${
+            documentationActive
+              ? "bg-lightBgHover dark:bg-darkBgHover rounded-3xl"
+              : ""
+          }`}
+        >
+          {documentationActive ? (
+            <MdArrowRight size={28} color="#037aa9" />
+          ) : (
+            ""
+          )}
+          <IoDocumentText size={20} color="#035AA9" />
+          <span className="text-[15px] font-poppins text-gray-900 dark:text-white">
+            Documentation
+          </span>
+        </Link>
+      </div>
+
+      <div className="bg-bgWhite dark:bg-backgroundDark rounded-2xl p-4">
+        <Link
+          to="/dashboard/documentation"
+          className="flex items-center space-x-3 px-2 py-2 border-b border-borderLight w-full hover:bg-lightBgHover dark:border-borderBlue dark:hover:bg-darkBgHover hover:rounded-3xl hover:scale-110"
+        >
+          <span className="text-[14px] font-poppins text-gray-900 dark:text-white py-2">
             Overview
           </span>
-        </button>
+        </Link>
 
         <button
-          className="flex items-center space-x-3 space-y-2 px-2 py-2 border-b  border-borderLight w-full  hover:scale-110 justify-between hover:bg-lightBgHover dark:border-borderBlue  dark:hover:bg-darkBgHover hover:rounded-3xl"
+          className="flex items-center space-x-3 space-y-2 px-2 py-4 border-b border-borderLight w-full hover:scale-110 justify-between hover:bg-lightBgHover dark:border-borderBlue dark:hover:bg-darkBgHover hover:rounded-3xl"
           onClick={toggleDevTools}
         >
-          <span className="text-[14px] font-poppins text-gray-900 dark:text-white">
+          <span className="text-[14px] font-poppins text-gray-900 dark:text-white py-2">
             Developer Tools
           </span>
           {isDevToolsOpen ? (
@@ -119,45 +155,44 @@ const Sidebar = ({ onButtonSelect }) => {
 
         {isDevToolsOpen && (
           <div className="pl-1 mt-5 space-y-5">
-            <button
-              className="flex text-[13px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 space-y-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("devBuildIntegration")}
+            <Link
+              to="/dashboard/documentation/dev/byi"
+              className="flex text-[13px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 space-y-2 py-4 w-full rounded-2xl"
             >
               Build Your Integration
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/dev/c2b"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("devC2B")}
             >
               C2B
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/dev/b2c"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("devB2C")}
             >
               B2C
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/dev/b2b"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("devB2B")}
             >
               B2B
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/dev/reversal"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("devReversal")}
             >
               Reversals
-            </button>
+            </Link>
           </div>
         )}
 
         <button
-          className="flex items-center space-x-3 px-2 py-2 w-full justify-between  rounded-2xl
-           hover:bg-lightBgHover dark:border-borderBlue  dark:hover:bg-darkBgHover hover:rounded-3xl  hover:scale-110"
+          className="flex items-center space-x-3 px-2 py-2 w-full justify-between rounded-2xl hover:bg-lightBgHover dark:border-borderBlue dark:hover:bg-darkBgHover hover:rounded-3xl hover:scale-110"
           onClick={toggleApiRef}
         >
-          <span className="text-[14px] font-poppins text-gray-900 dark:text-white">
+          <span className="text-[14px] font-poppins text-gray-900 dark:text-white py-2">
             API Reference
           </span>
           {isApiRefOpen ? (
@@ -169,24 +204,24 @@ const Sidebar = ({ onButtonSelect }) => {
 
         {isApiRefOpen && (
           <div className="pl-3 mt-5 space-y-5 pb-5">
-            <button
+            <Link
+              to="/dashboard/documentation/api/payments"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("apiReferencePayment")}
             >
               Payments
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/api/refunds"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("apiReferenceRefund")}
             >
               Refunds
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/dashboard/documentation/api/lookup"
               className="flex text-[14px] font-poppins text-gray-900 dark:text-white hover:bg-slate-200 dark:hover:bg-darkBgHover items-center space-x-3 px-2 py-2 w-full rounded-2xl"
-              onClick={() => handleClick("apiReferenceLookup")}
             >
               Transaction lookup
-            </button>
+            </Link>
           </div>
         )}
       </div>

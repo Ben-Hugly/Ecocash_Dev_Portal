@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "../../styles";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function ReverseTransaction() {
   const [appName, setAppName] = useState("");
@@ -130,18 +131,19 @@ function ReverseTransaction() {
         </div>
 
         <div className="flex flex-row items-center justify-between gap-4 border-t  border-buttonBluePastelLight dark:border-borderBlue p-3 mt-2 ">
-          <button
+          <Link
+            to={"/dashboard/myapps/details"}
             type="submit"
             className={` font-poppins  px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full  hover:scale-105 dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlue  mt-5 rounded-full hover:bg-darkBgHover`}
           >
             Discard
-          </button>
-          <button
-            type="submit"
+          </Link>
+          <Link
+            to={"/dashboard/myapps/transaction/reversesuccess"}
             className={`${style.buttons} mt-5 h-16 rounded-full`}
           >
             Submit
-          </button>
+          </Link>
         </div>
       </form>
     </div>

@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowUUpLeft } from "react-icons/pi";
 import { VscDebugStepInto } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 const TransactionsTable = ({
-  filterDate,
-  selectedStatus,
-  selectedAmount,
-  searchTerm,
-  currentPage,
-  setCurrentPage,
   filteredTransactions,
-  itemsPerPage, // Receive itemsPerPage from parent
+  currentPage,
+  itemsPerPage,
 }) => {
   const paginatedTransactions = filteredTransactions.slice(
     (currentPage - 1) * itemsPerPage,
@@ -49,8 +45,8 @@ const TransactionsTable = ({
           </div>
         </div>
 
-        <div className="container mx-auto">
-          <table className="table-auto w-full border-collapse">
+        <div className="container mx-auto overflow-x-auto">
+          <table className="table-auto w-full min-w-[800px] border-collapse">
             <thead>
               <tr className="bg-bgWhite dark:bg-backgroundDark text-left text-textBlack dark:text-textWhite font-poppins text-[13px] border-b border-buttonBluePastelLight dark:border-borderBlue h-[68px]">
                 <th className="px-4 py-2">ID</th>
@@ -86,14 +82,20 @@ const TransactionsTable = ({
                   <td className="px-4 py-2">{transaction.status}</td>
                   <td className="px-4 py-2">
                     {transaction.status !== "REVERSED" ? (
-                      <div className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1">
+                      <Link
+                        to={"/dashboard/myapps/transaction/reverse"}
+                        className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1"
+                      >
                         <span>Reverse</span>
                         <PiArrowUUpLeft size={18} />
-                      </div>
+                      </Link>
                     ) : (
-                      <div className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1">
+                      <Link
+                        to={"/dashboard/myapps/transaction/reversedetails"}
+                        className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1"
+                      >
                         <span>View Reversal</span>
-                      </div>
+                      </Link>
                     )}
                   </td>
                 </tr>

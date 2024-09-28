@@ -7,6 +7,7 @@ import {
   TransactionsTable,
   TransactionsFilter,
 } from "../Dashboard";
+import { Link } from "react-router-dom";
 
 function MyApplicationDetails() {
   const tabs = ["General", "Transactions", "Users & Permissions"];
@@ -162,10 +163,13 @@ function MyApplicationDetails() {
             </div>
 
             <div className="flex items-center font-poppins text-sm hover:scale-105">
-              <button className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center font-poppins">
+              <Link
+                to={"/dashboard/myapps/"}
+                className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center font-poppins"
+              >
                 Edit Application
                 <MdEdit size={15} className="ml-3" />
-              </button>
+              </Link>
             </div>
           </div>
 

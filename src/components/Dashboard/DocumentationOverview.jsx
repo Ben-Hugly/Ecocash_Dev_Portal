@@ -24,8 +24,6 @@ function DocumentationOverview() {
         </div>
         <OverviewDeveloperTools id="developer-tools" />
         <OverviewApiReference id="api-reference" />
-        <SocialMediaLinks />
-        <Footer />
       </div>
       <RightSideBar components={components} />
     </div>

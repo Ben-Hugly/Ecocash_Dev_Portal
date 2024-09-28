@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import style from "../../styles";
 import { MdDone } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-function AddNewApplication(handleDiscard) {
+function AddNewApplicationForm() {
   const [appName, setAppName] = useState("");
   const [appURL, setAppURL] = useState("");
   const [appDesc, setAppDesc] = useState("");
@@ -177,23 +178,24 @@ function AddNewApplication(handleDiscard) {
         </div>
 
         <div className="flex flex-row items-center justify-between gap-4 border-t  border-buttonBluePastelLight dark:border-borderBlue p-3 ">
-          <button
+          <Link
+            to={"/dashboard/myapps"}
             className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-5 h-16 rounded-full hover:bg-darkBgHover`}
-            onClick={() => handleDiscard}
           >
             Discard
-          </button>
-          <button
+          </Link>
+          <Link
+            to={"/dashboard/myapps/new/success"}
             type="submit"
             className={`${style.buttons} mt-5 h-16 rounded-full`}
           >
             {" "}
             Save
-          </button>
+          </Link>
         </div>
       </form>
     </div>
   );
 }
 
-export default AddNewApplication;
+export default AddNewApplicationForm;
