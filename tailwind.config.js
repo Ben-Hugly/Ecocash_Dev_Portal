@@ -11,7 +11,6 @@ export default {
         //old colors
         primary: "#00162A",
         secondary: "#08081B",
-
         bgWhite: "#F2F8FF",
         textBlue: "#1E92FB",
         textBlueSecond: "#035AA9",
