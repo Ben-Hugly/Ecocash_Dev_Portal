@@ -1,5 +1,5 @@
 import React from "react";
-import CodeSnippet from "../Dashboard/CodeSnippet";
+import CodeSnippet from "../CodeSnippet";
 
 function Java() {
   const javaCode = `

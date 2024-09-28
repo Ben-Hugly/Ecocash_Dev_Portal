@@ -24,8 +24,8 @@ const CodeSnippet = ({ codeString, language }) => {
   };
 
   return (
-    <div className="bg-componentsBackgroundDark rounded-3xl p-4 font-poppins">
-      <div className=" text-textBlack dark:text-white text-left font-poppins gap-3 flex flex-col">
+    <div className="bg-componentsBackgroundLight  dark:bg-componentsBackgroundDark text-black dark:text-white  rounded-3xl p-4 font-poppins transition-all duration-1000">
+      <div className="  text-left font-poppins gap-3 flex flex-col">
         <h2 className="text-[28px] font-semibold font-poppins capitalize">
           {language}
         </h2>
@@ -38,7 +38,11 @@ const CodeSnippet = ({ codeString, language }) => {
             className="cursor-pointer absolute flex flex-row  top-6 right-1 p-2"
             aria-label="Copy code"
           >
-            <FiCopy size={22} color={hover ? "#11b7a49d" : "#808080"} />
+            <FiCopy
+              size={22}
+              color={hover ? "#11b7a49d" : "#808080"}
+              className="dark:text-pearlBlue text-dimBlue"
+            />
             {copied && (
               <span className="ml-2 text-green-300 text-sm font-poppins">
                 Copied!

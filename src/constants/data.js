@@ -4,13 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { IoMdBuild, IoIosHelpCircle, IoLogoWhatsapp } from "react-icons/io";
 import { FaCirclePlay, FaFacebook } from "react-icons/fa6";
 import { MdOutlineSupportAgent, MdSpaceDashboard } from "react-icons/md";
-import {
-  facebook,
-  linkedin,
-  whatsapp,
-  x,
-  youtube,
-} from "../assets/SocialMediaIcons";
+import { useCase1, useCase2, useCase3, useCase4 } from "../assets/UseCases";
 import { PiChartLineUpBold } from "react-icons/pi";
 import React from "react";
 import {
@@ -18,10 +12,6 @@ import {
   realTimePayment,
   enhancedPayment,
   customizablePayment,
-  useCase1,
-  useCase2,
-  useCase3,
-  useCase4,
   weCut,
   hugly,
   google,

@@ -7,7 +7,7 @@ function Payments() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12 transition-all duration-1000">
       <div className=" text-textBlack dark:text-white text-left font-poppins gap-4 flex flex-col ml-4 mb-16">
         <h2 className="text-[36px] font-semibold font-poppins ">Payments</h2>
         <p className="text-sm font-thin opacity-90 max-w-[750px]">

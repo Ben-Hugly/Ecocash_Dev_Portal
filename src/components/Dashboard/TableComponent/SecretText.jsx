@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { BsCopy } from "react-icons/bs";
+import { PiCopyBold } from "react-icons/pi";
 const SecretText = ({ text }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -31,7 +31,7 @@ const SecretText = ({ text }) => {
         aria-label="Copy text"
         className="flex flex-row"
       >
-        <BsCopy size={15} className="text-headerTextLight" />
+        <PiCopyBold size={20} className="text-headerTextLight" />
         {copied && <span className="text-green-400 mr-1 text-xs">Copied!</span>}
       </button>
     </div>

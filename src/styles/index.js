@@ -76,10 +76,10 @@ const styles = {
   UseCaseDropdownTabCardBG: "bg-white dark:bg-primary rounded-b-lg p-4 w-full ",
   UseCaseDropdownTabCardImg: "w-full h-40 object-cover rounded-t-lg",
   UseCaseDropdownTabCardContent:
-    "text-textBlack dark:text-textWhite font-poppins font-light text-[13px] text-left sm:text-center md:text-left w-full ",
+    "text-textBlack dark:text-textWhite font-poppins font-light text-[13px] text-left sm:text-center md:text-left w-full opacity-75 ",
   UseCaseDropdownTabCardBorder:
     "border-b border-buttonBluePastelLight dark:border-borderBlue pb-1 mb-2",
-  UseCaseDropdownTabCardTitle: "text-[16px] font-poppins font-semibold",
+  UseCaseDropdownTabCardTitle: "text-[14px] font-poppins font-medium",
   UseCaseDropdownTabCardWrapper:
     "flex justify-between items-center text-center ",
 

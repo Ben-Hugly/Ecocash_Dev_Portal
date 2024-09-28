@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { SocialMediaLinks, Footer } from "./components";
 import {
   Navbar,
   Hero,
@@ -8,10 +9,7 @@ import {
   Benefits,
   Testimonials,
   ReadyToGrow,
-  SocialMediaLinks,
-  Footer,
-} from "./components";
-import { ThemeToggle } from "./components/Dashboard";
+} from "./components/Homepage";
 function App() {
   return (
     <div className="dark:bg-primary bg-white space-y-20 p-12">

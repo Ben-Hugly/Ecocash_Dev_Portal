@@ -1,7 +1,7 @@
 import React from "react";
 import OverviewDeveloperTools from "./OverviewDeveloperTools";
 import OverviewApiReference from "./OverviewApiReference";
-import { Footer, SocialMediaLinks } from "../../components";
+import { Footer, SocialMediaLinks } from "..";
 import RightSideBar from "./RightSideBar";
 
 const components = [

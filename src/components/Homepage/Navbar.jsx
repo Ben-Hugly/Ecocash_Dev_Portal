@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineRight, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
-import { Axios } from "../config";
-import style from "../styles";
-import { logoDark, logoLight } from "../assets/Logo";
+import { Axios } from "../../config";
+import style from "../../styles";
+import { logoDark, logoLight } from "../../assets/Logo";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
