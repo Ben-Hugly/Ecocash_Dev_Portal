@@ -1,6 +1,7 @@
 import React from "react";
 import { FaChevronRight, FaPlus } from "react-icons/fa";
 import MyApplicationsCard from "./Cards/MyApplicationsCard";
+import { Link } from "react-router-dom";
 
 // Sample data for the graph
 const graphData = [
@@ -42,18 +43,24 @@ const applicationsData = [
 
 const MyApplications = () => {
   return (
-    <div className=" bg-componentsBackgroundLight dark:bg-componentsBackgroundDark p-6 rounded-3xl text-textBlack dark:text-textWhite">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold text-left  text-textBlack dark:text-textWhite font-poppins">
+    <div className="bg-componentsBackgroundLight dark:bg-componentsBackgroundDark p-6 rounded-3xl text-textBlack dark:text-textWhite">
+      <div className="flex flex-row justify-between items-center mb-4">
+        <h2 className="text-2xl font-bold text-left text-textBlack dark:text-textWhite font-poppins mb-2 md:mb-0">
           My Applications
         </h2>
-        <div className="flex items-center">
-          <button className="bg-[#02437D] text-white pl-5 pr-4 py-2 rounded-3xl hover:bg-[#023B6A] mr-2">
+        <div className="flex flex-col md:flex-row items-center">
+          <Link
+            to="/dashboard/myapps/new"
+            className="bg-[#02437D] text-white pl-5 pr-4 py-2 rounded-3xl hover:bg-[#023B6A] mb-2 md:mb-0 md:mr-2 text-sm font-poppins"
+          >
             <FaPlus className="justify-center mr-1 my-1" />
-          </button>
-          <button className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center">
-            View All <FaChevronRight className="ml-3 " />
-          </button>
+          </Link>
+          <Link
+            to="/dashboard/myapps"
+            className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center text-sm font-poppins"
+          >
+            View All <FaChevronRight className="ml-3" />
+          </Link>
         </div>
       </div>
 

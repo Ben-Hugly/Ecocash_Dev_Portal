@@ -43,20 +43,22 @@ function MyApplicationsTabView() {
   ];
 
   return (
-    <div className="dark:bg-darkBgComponents bg-white text-white p-6 rounded-3xl ">
+    <div className="dark:bg-componentsBackgroundDark bg-componentsBackgroundLight  dark:text-white text-black p-6 rounded-3xl ">
       <div className="flex justify-between mb-4 flex-col gap-5">
-        <div className="flex flex-row items-center justify-between">
-          <h2 className="text-[45px] font-semibold font-poppins text-left text-textBlack dark:text-textWhite">
-            My Applications
-          </h2>
-          <div className="flex items-center font-poppins text-sm hover:scale-105">
-            <Link
-              to="/dashboard/myapps/new"
-              className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center"
-            >
-              {activeTab === "Archived" ? "Restore All" : "New Application"}
-              {activeTab === "Archived" ? "" : <FaPlus className="ml-3" />}
-            </Link>
+        <div className="flex flex-col gap-5 mb-4">
+          <div className="flex flex-col md:flex-row lg:flex-row items-center justify-between gap-4">
+            <h2 className="text-[30px] md:text-[45px] font-semibold font-poppins text-left text-textBlack dark:text-textWhite">
+              My Applications
+            </h2>
+            <div className="flex items-center font-poppins text-sm hover:scale-105">
+              <Link
+                to="/dashboard/myapps/new"
+                className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center"
+              >
+                {activeTab === "Archived" ? "Restore All" : "New Application"}
+                {activeTab === "Archived" ? "" : <FaPlus className="ml-3" />}
+              </Link>
+            </div>
           </div>
         </div>
 

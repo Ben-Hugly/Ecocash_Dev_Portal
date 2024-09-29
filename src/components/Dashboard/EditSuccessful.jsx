@@ -28,14 +28,13 @@ function EditSuccessful() {
         <div className="flex flex-row items-center justify-between gap-2 border-t  border-buttonBluePastelLight dark:border-borderBlue mt-4 mb-5 ">
           <Link
             to={"/dashboard/myapps"}
-            className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-10 h-[48px] rounded-full hover:bg-darkBgHover text-[12px]`}
+            className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack h-[44px] rounded-full hover:bg-darkBgHover text-[12px] flex items-center justify-center px-4 mt-10`}
           >
             Close
           </Link>
-
           <Link
             to={"/dashboard/myapps"}
-            className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[12px] h-[48px] w-full hover:scale-105 flex justify-between items-center rounded-full mt-10 px-2"
+            className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[12px] h-[48px] w-full hover:scale-105 flex justify-between items-center rounded-full mt-10  px-2"
           >
             <span className="flex-grow text-center ">
               Continue To My Application

@@ -63,7 +63,7 @@ function Navbar() {
             }
           ) : (
             <>
-              <Link to="/login" className={`${style.navbarLoginButton} `}>
+              <Link to="/dashboard" className={`${style.navbarLoginButton} `}>
                 <span className="text-[14px] font-poppins">Log In</span>
                 <FaUser size={15} />
               </Link>

@@ -45,7 +45,7 @@ const archivedApplicationsData = [
     allTimeData: { received: "1", sent: "1", reversed: "1" },
     weeklyData: { received: "589.31", sent: "311.26", reversed: "42.53" },
     status: "Archived",
-    currency: "Sandbox",
+    currency: "USD",
     onRestore: () => console.log("Restore 1890"),
     onDelete: () => console.log("Delete 1890"),
   },

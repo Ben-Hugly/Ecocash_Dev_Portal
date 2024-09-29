@@ -47,22 +47,23 @@ const Sidebar = () => {
       if (myAppsActive) setMyAppsActive(false);
     }
   };
+
   return (
-    <div className="bg-white dark:bg-darkBgComponents flex flex-col p-4 h-full ">
+    <div className="bg-white dark:bg-darkBgComponents flex flex-col p-4 h-full">
       <div className="flex justify-between items-center py-3 relative">
         <img
-          src={logoLight} // Change logo based on the theme
+          src={logoLight}
           alt="EcoCash Developer"
           className={`${style.navbarLogo} block dark:hidden`}
         />
         <img
-          src={logoDark} // Change logo based on the theme
+          src={logoDark}
           alt="EcoCash Developer"
           className={`${style.navbarLogo} hidden dark:block`}
         />
       </div>
 
-      <div className="mt-5 border-b border-t border-borderLight dark:border-borderBlue ">
+      <div className="mt-5 border-b border-t border-borderLight dark:border-borderBlue">
         <ul className="space-y-3 font-poppins text-lg py-2">
           <li
             className={`hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl ${
@@ -111,7 +112,7 @@ const Sidebar = () => {
       >
         <Link
           to="/dashboard/documentation"
-          className={`flex items-center space-x-3 px-2 py-5 pr-7 hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl w-full${
+          className={`flex items-center space-x-3 px-2 py-5 pr-7 hover:bg-lightBgHover dark:hover:bg-darkBgHover hover:scale-105 hover:rounded-2xl w-full ${
             documentationActive
               ? "bg-lightBgHover dark:bg-darkBgHover rounded-3xl"
               : ""

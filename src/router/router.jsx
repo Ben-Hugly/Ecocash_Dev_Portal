@@ -28,6 +28,7 @@ import {
   ReverseTransaction,
   BuildingYourIntegration,
   Payments,
+  MyApplicationEmpty,
 } from "../components/Dashboard";
 
 export const router = createBrowserRouter([
@@ -56,6 +57,7 @@ export const router = createBrowserRouter([
       },
       { path: "/dashboard/myapps/edit", element: <EditApplication /> },
       { path: "/dashboard/myapps/editsucess", element: <EditSuccessful /> },
+      { path: "/dashboard/myapps/empty", element: <MyApplicationEmpty /> },
 
       {
         path: "/dashboard/myapps/transaction/reverse",

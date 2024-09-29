@@ -6,11 +6,12 @@ import {
 } from "../components/Dashboard";
 import { SocialMediaLinks, Footer } from "../components";
 import { Outlet } from "react-router-dom";
+import ErrorBoundary from "../components/ErrorBoundary";
 function Dashboard() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 870) {
         setIsSidebarVisible(false);
       } else {
         setIsSidebarVisible(true);
@@ -26,23 +27,25 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="flex flex-row h-full dark:bg-backgroundDark bg-white w-full">
-      <div
-        className="flex flex-col flex-grow p-2 gap-6 w-1/5"
-        style={{ display: isSidebarVisible ? "block" : "none" }}
-      >
-        <Sidebar />
-        {/* Ensures Sidebar doesn't grow */}
-      </div>
-      <div className="flex flex-col flex-grow p-2 gap-6 w-4/5">
-        <NavbarDashboard toggleSidebar={isSidebarVisible} />
-        <Outlet />
+    <ErrorBoundary>
+      <div className="flex flex-row h-full dark:bg-backgroundDark bg-white w-full">
+        <div
+          className="flex flex-col flex-grow p-2 gap-6 w-1/5"
+          style={{ display: isSidebarVisible ? "block" : "none" }}
+        >
+          <Sidebar />
+          {/* Ensures Sidebar doesn't grow */}
+        </div>
+        <div className="flex flex-col flex-grow p-2 gap-6 w-4/5">
+          <NavbarDashboard toggleSidebar={isSidebarVisible} />
+          <Outlet />
 
-        <DocumentationOverviewSmall />
-        <SocialMediaLinks />
-        <Footer />
+          <DocumentationOverviewSmall />
+          <SocialMediaLinks />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 }
 

@@ -11,15 +11,18 @@ function ReversalSuccessful() {
     autoplay: true,
     animationData: animationData.default,
   };
+
   return (
-    <div className="container mx-auto max-w-xl border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full  lg:w-2/3  p-8 mt-8 flex flex-col">
-      <div className={`${style.SignUpSuccessContainer} gap-8`}>
+    <div className="container mx-auto max-w-xl border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full lg:w-2/3 p-8 mt-8 flex flex-col">
+      <div
+        className={`${style.SignUpSuccessContainer} gap-8 flex flex-col items-center`}
+      >
         <div className={`${style.SignUpSuccessLottie}`}>
           <Lottie options={defaultOptions} height={240} width={240} />
         </div>
 
         <div className={`${style.SignUpSuccessTextWrapper}`}>
-          <span className={`${style.lgText} text-[28px]`}>
+          <span className={`${style.lgText} text-[28px] text-center`}>
             Reversal Successful
           </span>
         </div>
@@ -28,7 +31,7 @@ function ReversalSuccessful() {
 
         <Link
           to={"/dashboard/myapps/details"}
-          className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full hover:scale-105 flex justify-between items-center rounded-full  mb-6"
+          className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full hover:scale-105 flex justify-between items-center rounded-full mb-6"
         >
           <span className="flex-grow text-center">
             Continue To My Transactions

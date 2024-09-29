@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaClipboard } from "react-icons/fa"; // Import the clipboard icon from react-icons
+import { PiCopyBold } from "react-icons/pi"; // Import the clipboard icon from react-icons
 
 const ApiKeyDisplay = ({ apiKey }) => {
   const [copied, setCopied] = useState(false);
@@ -19,7 +19,7 @@ const ApiKeyDisplay = ({ apiKey }) => {
         aria-label="Copy API Key"
         className="flex items-center" // Align items in a row
       >
-        <FaClipboard className="h-5 w-5 text-gray-600 cursor-pointer hover:text-gray-800 mr-2" />
+        <PiCopyBold className="h-5 w-5 text-gray-600 cursor-pointer hover:text-gray-800 mr-2" />
         {copied && <span className="text-green-300">Copied!</span>}
       </button>
     </div>

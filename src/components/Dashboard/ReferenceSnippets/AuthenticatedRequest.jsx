@@ -34,7 +34,7 @@ function AuthenticatedRequest() {
               NB
             </span>
           </div>
-          <span className="ml-10 font-thin text-sm">
+          <span className="xs:ml-2 sm:ml-3  md:ml-10 font-thin text-sm">
             Ensure sourceReference follows a valid UUID format
           </span>
         </div>

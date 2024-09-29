@@ -44,7 +44,7 @@ function DocumentationOverviewSmall() {
           Documentation Overview
         </h1>
 
-        <div className="grid grid-cols-4 gap-3 mt-5 md:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 mt-5 md:grid-cols-4 lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2">
           {cards.map((card) => (
             <DocumentationOverviewCardSmall key={card.title} {...card} />
           ))}

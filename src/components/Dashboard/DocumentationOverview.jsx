@@ -22,10 +22,14 @@ function DocumentationOverview() {
             how to build EcoCash apps using APIs.
           </span>
         </div>
-        <OverviewDeveloperTools id="developer-tools" />
-        <OverviewApiReference id="api-reference" />
+        <div>
+          <OverviewDeveloperTools id="developer-tools" />
+          <OverviewApiReference id="api-reference" />
+        </div>
       </div>
-      <RightSideBar components={components} />
+      <div className="hidden md:block lg:block">
+        <RightSideBar components={components} />
+      </div>
     </div>
   );
 }

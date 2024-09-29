@@ -7,7 +7,7 @@ const LabelWithCircle = ({ text, color }) => (
     className={`border border-buttonBluePastelLight dark:border-borderBlue flex items-center rounded`}
   >
     <div className={`h-2 w-2 rounded-full ${color} ml-1`}></div>
-    <span className={`text-textBlack dark:text-white bg-${color} px-2 text-xs`}>
+    <span className={`text-textBlack dark:text-white bg-${color} px-1 text-xs`}>
       {text}
     </span>
   </div>
@@ -32,7 +32,7 @@ function ArchivedApplicationCard({
           <div
             className={`border border-buttonBluePastelLight dark:border-borderBlue flex items-center space-x-1 rounded`}
           >
-            <span className={` text-textBlack dark:text-white  px-2 text-xs`}>
+            <span className={` text-textBlack dark:text-white  px-1 text-xs`}>
               {currency}
             </span>
           </div>

@@ -1,18 +1,139 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowUUpLeft } from "react-icons/pi";
 import { VscDebugStepInto } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const TransactionsTable = ({
   filteredTransactions,
   currentPage,
   itemsPerPage,
 }) => {
+  const [exportFormat, setExportFormat] = useState("");
+
   const paginatedTransactions = filteredTransactions.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  const handleExport = (format) => {
+    switch (format) {
+      case "PDF":
+        exportToPDF();
+        break;
+      case "CSV":
+        exportToCSV();
+        break;
+      case "Excel":
+        exportToExcel();
+        break;
+      default:
+        break;
+    }
+  };
+
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+    doc.autoTable({
+      head: [
+        [
+          "ID",
+          "Ecocash Reference",
+          "Custom MSISDN",
+          "Amount",
+          "Date",
+          "Currency",
+          "CR/DR",
+          "Status",
+        ],
+      ],
+      body: paginatedTransactions.map((transaction) => [
+        transaction.id,
+        transaction.ecocashReference,
+        transaction.customMsisdn,
+        transaction.amount,
+        transaction.date,
+        transaction.currency,
+        transaction.crDr,
+        transaction.status,
+      ]),
+    });
+    doc.save("transactions.pdf");
+  };
+
+  const exportToCSV = () => {
+    const csvContent = [
+      [
+        "ID",
+        "Ecocash Reference",
+        "Custom MSISDN",
+        "Amount",
+        "Date",
+        "Currency",
+        "CR/DR",
+        "Status",
+      ],
+      ...paginatedTransactions.map((transaction) => [
+        transaction.id,
+        transaction.ecocashReference,
+        transaction.customMsisdn,
+        transaction.amount,
+        transaction.date,
+        transaction.currency,
+        transaction.crDr,
+        transaction.status,
+      ]),
+    ]
+      .map((e) => e.join(","))
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "transactions.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const exportToExcel = () => {
+    const csvContent = [
+      [
+        "ID",
+        "Ecocash Reference",
+        "Custom MSISDN",
+        "Amount",
+        "Date",
+        "Currency",
+        "CR/DR",
+        "Status",
+      ],
+      ...paginatedTransactions.map((transaction) => [
+        transaction.id,
+        transaction.ecocashReference,
+        transaction.customMsisdn,
+        transaction.amount,
+        transaction.date,
+        transaction.currency,
+        transaction.crDr,
+        transaction.status,
+      ]),
+    ]
+      .map((e) => e.join("\t")) // Use tabs for Excel
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "application/vnd.ms-excel" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "transactions.xls");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl">
@@ -25,8 +146,11 @@ const TransactionsTable = ({
           <div className="relative">
             <select
               className="border rounded-3xl pl-5 pr-10 py-2 text-textBlueSecond font-poppins font-medium text-sm h-[44px] bg-buttonBluePastelLight dark:bg-dimBlue dark:text-textBlue appearance-none"
-              value=""
-              onChange={() => {}}
+              value={exportFormat}
+              onChange={(e) => {
+                setExportFormat(e.target.value);
+                handleExport(e.target.value);
+              }}
             >
               <option value="" className="text-center">
                 Export
@@ -36,6 +160,9 @@ const TransactionsTable = ({
               </option>
               <option value="CSV" className="text-center">
                 CSV
+              </option>
+              <option value="Excel" className="text-center">
+                Excel
               </option>
             </select>
             <IoIosArrowDown

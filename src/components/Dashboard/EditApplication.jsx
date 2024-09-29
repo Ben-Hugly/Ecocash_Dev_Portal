@@ -115,13 +115,13 @@ function EditApplication() {
         <div className="flex flex-row items-center justify-between gap-4 border-t  border-buttonBluePastelLight dark:border-borderBlue p-3 ">
           <Link
             to={"/dashboard/myapps"}
-            className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-5 h-16 rounded-full hover:bg-darkBgHover`}
+            className={`${style.buttons} dark:bg-transparent bg-white border border-buttonBluePastelLight dark:border-borderBlue dark:text-textBlue text-textBlack mt-5 h-16 rounded-full hover:bg-darkBgHover flex items-center justify-center`}
           >
             Discard
           </Link>
           <Link
             to={"/dashboard/myapps/editsucess"}
-            className={`${style.buttons} mt-5 h-16 rounded-full`}
+            className={`${style.buttons} mt-5 h-16 rounded-full flex items-center justify-center`}
           >
             Save
           </Link>

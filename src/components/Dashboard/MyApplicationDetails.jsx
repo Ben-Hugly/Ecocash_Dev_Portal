@@ -151,7 +151,7 @@ function MyApplicationDetails() {
     <div>
       <div className="dark:bg-backgroundDark bg-white text-white p-6 rounded-3xl">
         <div className="flex justify-between mb-4 flex-col gap-5">
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex md:flex-row lg:flex-row flex-col gap-4 items-center justify-between">
             <div className="font-poppins text-left max-w-[640px] text-textBlack dark:text-textWhite flex flex-col gap-4 ml-3">
               <h2 className="text-[45px] font-semibold">
                 {"Hughly USD Payment: Comprehensive"}
@@ -164,7 +164,7 @@ function MyApplicationDetails() {
 
             <div className="flex items-center font-poppins text-sm hover:scale-105">
               <Link
-                to={"/dashboard/myapps/"}
+                to={"/dashboard/myapps/edit"}
                 className="bg-[#035AA9] text-white px-4 py-2 rounded-full hover:bg-[#024D8F] flex items-center font-poppins"
               >
                 Edit Application

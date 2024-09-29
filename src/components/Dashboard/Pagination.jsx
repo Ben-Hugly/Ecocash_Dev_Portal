@@ -21,8 +21,8 @@ const Pagination = ({
   };
 
   return (
-    <div className="mt-4 flex items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2 text-textBlack">
-      <div className="flex items-center gap-4">
+    <div className="mt-4 flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-4 text-textBlack">
+      <div className="flex items-center gap-4 w-full">
         <div className="flex items-center gap-2">
           <button
             className="mr-2 px-2 py-1 rounded-3xl bg-borderLight dark:bg-dimBlue dark:text-textBlue"
@@ -43,8 +43,10 @@ const Pagination = ({
             <FaAngleRight size={24} className="p-1" color="#1E92FB" />
           </button>
         </div>
-        <div className="h-5 w-[1px] bg-borderLight"></div>
-        <div className="relative">
+
+        <div className="hidden sm:block h-5 w-[1px] bg-borderLight dark:bg-borderBlue"></div>
+
+        <div className="relative flex items-center">
           <select
             className="rounded-3xl pl-4 pr-10 py-1 text-buttonBluePastelLight font-poppins font-normal text-sm h-[36px] bg-textBlueSecond appearance-none w-full"
             value={selectedItemsPerPage}
@@ -61,7 +63,8 @@ const Pagination = ({
             size={16}
           />
         </div>
-        <span className="text-xs font-poppins text-textBlack dark:text-textWhite">
+
+        <span className="text-xs font-poppins text-textBlack dark:text-textWhite hidden sm:inline">
           Items per page
         </span>
       </div>

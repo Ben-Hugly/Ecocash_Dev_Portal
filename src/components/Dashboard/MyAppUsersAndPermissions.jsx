@@ -93,10 +93,10 @@ function MyAppUsersAndPermissions() {
 
   return (
     <div className="p-4">
-      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-4">
         {/* Search and Filter section */}
-        <div className="flex items-center gap-2 w-full">
-          <div className="relative w-full max-w-xs">
+        <div className="flex flex-col sm:flex-row items-center gap-2 w-full">
+          <div className="relative flex-1">
             <input
               type="text"
               className="shadow-md rounded-lg py-4 pl-10 pr-3 text-textBlack dark:text-white hover:border-borderBlueSecond font-poppins text-[14px] font-thin h-[44px] w-full dark:bg-darkBgComponents"
@@ -109,9 +109,10 @@ function MyAppUsersAndPermissions() {
               size={22}
             />
           </div>
-          <div className="relative flex-1">
+
+          <div className="relative ">
             <select
-              className="rounded-3xl px-3 py-2 text-textBlueSecond font-poppins font-normal text-sm h-[44px] bg-buttonBluePastelLight appearance-none w-full dark:bg-dimBlue dark:text-textBlue"
+              className="rounded-3xl px-3 py-2 text-textBlueSecond font-poppins font-normal text-sm h-[44px] bg-buttonBluePastelLight appearance-none  dark:bg-dimBlue dark:text-textBlue"
               value={selectedStatus}
               onChange={(e) => handleStatusChange(e.target.value)}
             >
@@ -126,7 +127,8 @@ function MyAppUsersAndPermissions() {
             />
           </div>
 
-          <div className="h-5 w-[1px] bg-borderLight dark:bg-borderBlue"></div>
+          <div className="hidden sm:block h-5 w-[1px] bg-borderLight dark:bg-borderBlue"></div>
+
           <button
             className="bg-[#035AA9] text-white px-4 py-3 rounded-full hover:bg-[#024D8F] flex items-center font-poppins text-sm hover:scale-105"
             onClick={handleAddMemberClick}
@@ -208,8 +210,8 @@ function MyAppUsersAndPermissions() {
         </table>
 
         {/* Pagination Section */}
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-2 text-textBlack">
-          <div className="flex items-center gap-4">
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between mb-4 rounded-2xl dark:bg-backgroundDark bg-bgWhite p-4 text-textBlack">
+          <div className="flex items-center gap-4 w-full">
             <div className="flex items-center gap-2">
               <button
                 className="mr-2 px-2 py-1 rounded-3xl bg-borderLight dark:bg-dimBlue dark:text-textBlue"
@@ -231,8 +233,10 @@ function MyAppUsersAndPermissions() {
                 <FaAngleRight size={24} className="p-1" color="#1E92FB" />
               </button>
             </div>
-            <div className="h-5 w-[1px] bg-borderLight"></div>
-            <div className="relative">
+
+            <div className="hidden sm:block h-5 w-[1px] bg-borderLight dark:bg-borderBlue"></div>
+
+            <div className="relative flex items-center">
               <select
                 className="rounded-3xl pl-4 pr-10 py-1 text-buttonBluePastelLight font-poppins font-normal text-sm h-[36px] bg-textBlueSecond appearance-none w-full"
                 value={itemsPerPage}
@@ -249,7 +253,8 @@ function MyAppUsersAndPermissions() {
                 size={16}
               />
             </div>
-            <span className="text-xs font-poppins text-textBlack dark:text-textWhite">
+
+            <span className="text-xs font-poppins text-textBlack dark:text-textWhite hidden sm:inline">
               Items per page
             </span>
           </div>

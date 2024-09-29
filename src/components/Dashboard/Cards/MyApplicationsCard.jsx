@@ -11,13 +11,13 @@ import { step_into, step_out, undo } from "../../../assets/DashboardIcons";
 import { FaChevronRight } from "react-icons/fa";
 
 function MyApplicationsCard({
-  id,
-  title,
-  allTimeData,
-  weeklyData,
-  status,
-  currency,
-  graphData,
+  id = "Default ID",
+  title = "Default Title",
+  allTimeData = { received: 0, sent: 0, reversed: 0 },
+  weeklyData = { received: 0, sent: 0, reversed: 0 },
+  status = "Unknown",
+  currency = "USD",
+  graphData = [],
 }) {
   const LabelWithCircle = ({ text, color }) => (
     <div
@@ -167,7 +167,7 @@ function MyApplicationsCard({
             <defs>
               <linearGradient id="horizontalGrid" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#1E92FB" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="##1E92FB" stopOpacity="0" />
+                <stop offset="100%" stopColor="#1E92FB" stopOpacity="0" />
               </linearGradient>
             </defs>
             <Line
