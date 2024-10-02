@@ -12,7 +12,7 @@ function MyApplicationDetailsCard({
   status,
 }) {
   return (
-    <div className="flex flex-col gap-5 text-textBlack dark:text-textWhite font-poppins text-sm font-thin border border-buttonBluePastelLight dark:border-borderBlue p-6 rounded-3xl">
+    <div className="flex flex-col gap-5 text-textBlack dark:text-textWhite font-poppins text-sm  border border-buttonBluePastelLight dark:border-borderBlue p-6 rounded-3xl">
       <div className="flex flex-col md:flex-row md:items-center gap-2">
         <span className="w-full md:w-[280px] text-left">Application Name</span>
         <span>{appName}</span>

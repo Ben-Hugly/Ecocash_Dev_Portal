@@ -1,9 +1,12 @@
 import React from "react";
 import { VideoPlay } from "../Dashboard";
 
-function CreateApiKey() {
+function CreateApiKey({ id }) {
   return (
-    <div className="bg-componentsBackgroundLight  dark:bg-componentsBackgroundDark rounded-3xl p-6 md:p-8 font-poppins ">
+    <div
+      id={id}
+      className="bg-componentsBackgroundLight  dark:bg-componentsBackgroundDark rounded-3xl p-6 md:p-8 font-poppins "
+    >
       <div className="text-textBlack dark:text-white text-left gap-3 flex flex-col max-w-[750px]">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tex-left">
           Creating an API Key

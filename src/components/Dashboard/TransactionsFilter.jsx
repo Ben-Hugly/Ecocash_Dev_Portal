@@ -55,9 +55,10 @@ const TransactionsFilter = ({
           onChange={(e) => handleStatusChange(e.target.value)}
         >
           <option value="">Status</option>
-          <option value="Completed">Completed</option>
-          <option value="Pending">Pending</option>
-          <option value="Failed">Failed</option>
+          <option value="SUCCESS">Success</option>
+          <option value="PENDING_VALIDATION">Pending Validation</option>
+          <option value="REVERSED">Reversed</option>
+          <option value="FAILED_REVERSAL">Failed Reversal</option>
         </select>
         <IoIosArrowDown
           className="absolute right-5 top-1/2 transform -translate-y-1/2 text-textBlack dark:text-textBlue"
@@ -76,9 +77,9 @@ const TransactionsFilter = ({
           onChange={(e) => handleAmountChange(e.target.value)}
         >
           <option value="">Amount</option>
-          <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="500">500</option>
+          <option value="100">0-100</option>
+          <option value="200">0-200</option>
+          <option value="500">200-500</option>
         </select>
         <IoIosArrowDown
           className="absolute right-5 top-1/2 transform -translate-y-1/2 text-textBlack dark:text-textBlue"

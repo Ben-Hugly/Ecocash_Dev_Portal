@@ -2,24 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="google-signin-client_id"
       content="YOUR_CLIENT_ID.apps.googleusercontent.com"
     />
     <title>EcoCash Dev Portal</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        transition: background-color 0.7s ease;
+      }
+      .dark {
+        background-color: #08081b; /* Dark background */
+      }
+      .light {
+        background-color: #f2f8ff; /* Light background */
+      }
+    </style>
   </head>
 
-  <body class="dark:bg-primary bg-white">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

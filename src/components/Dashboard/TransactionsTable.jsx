@@ -191,9 +191,9 @@ const TransactionsTable = ({
               {paginatedTransactions.map((transaction) => (
                 <tr
                   key={transaction.id}
-                  className="border-t border-buttonBluePastelLight dark:border-borderBlue font-poppins font-thin text-xs h-[56px] text-textBlack dark:text-textWhite"
+                  className="border-t border-buttonBluePastelLight dark:border-borderBlue font-poppins  text-sm h-[56px] text-textBlack dark:text-textWhite opacity-80"
                 >
-                  <td className="px-4 py-2">{transaction.id}</td>
+                  <td className="px-2 py-2">{transaction.id}</td>
                   <td className="px-4 py-2">{transaction.ecocashReference}</td>
                   <td className="px-4 py-2">{transaction.customMsisdn}</td>
                   <td className="px-4 py-2">{transaction.amount}</td>
@@ -203,17 +203,19 @@ const TransactionsTable = ({
                     {transaction.crDr}
                     <VscDebugStepInto
                       size={16}
-                      color={transaction.crDr === "CR" ? "#5de987" : "#2a75ca"}
+                      color={transaction.crDr === "CR" ? "#5de987" : "#1e92fb"}
                     />
                   </td>
-                  <td className="px-4 py-2">{transaction.status}</td>
-                  <td className="px-4 py-2">
+                  <td className="px-2 py-2 text-left">{transaction.status}</td>
+                  <td className="px-2 py-2 text-left">
                     {transaction.status !== "REVERSED" ? (
                       <Link
                         to={"/dashboard/myapps/transaction/reverse"}
                         className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1"
                       >
-                        <span>Reverse</span>
+                        <span className="font-poppins text-sm opacity-95">
+                          Reverse
+                        </span>
                         <PiArrowUUpLeft size={18} />
                       </Link>
                     ) : (
@@ -221,7 +223,9 @@ const TransactionsTable = ({
                         to={"/dashboard/myapps/transaction/reversedetails"}
                         className="flex flex-row items-center text-textBrightBlue hover:text-textDimBlue cursor-pointer hover:scale-105 gap-1"
                       >
-                        <span>View Reversal</span>
+                        <span className="font-poppins text-sm opacity-95">
+                          View Reversal
+                        </span>
                       </Link>
                     )}
                   </td>

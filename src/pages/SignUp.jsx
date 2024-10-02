@@ -8,6 +8,7 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link, useNavigate } from "react-router-dom";
 import { InputScreensLogo } from "../components";
+import { TermsAndConditions } from "../components/Dashboard/Modal";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -27,6 +28,16 @@ function SignUp() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [termsChecked, setTermsChecked] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleTermsAndConditionClick = () => {
+    if (!isModalOpen) {
+      setIsModalOpen(true);
+    }
+  };
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
 
   // Toggle password visibility
   const togglePasswordVisibility = () => {
@@ -202,7 +213,6 @@ function SignUp() {
           <span
             className={`${style.smallText}  ${style.SignUpSectionHeadingText}`}
           >
-            {" "}
             Personal details
           </span>
 
@@ -218,8 +228,7 @@ function SignUp() {
                 onChange={(e) => setFirstname(e.target.value)}
               />
               <label htmlFor="firstname" className={`${style.inputLabels}`}>
-                {" "}
-                First Name:{" "}
+                First Name
               </label>
             </div>
           </div>
@@ -236,7 +245,7 @@ function SignUp() {
                 onChange={(e) => setSurname(e.target.value)}
               />
               <label htmlFor="surname" className={`${style.inputLabels}`}>
-                Surname:
+                Surname
               </label>
             </div>
           </div>
@@ -253,7 +262,7 @@ function SignUp() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label htmlFor="email" className={`${style.inputLabels}`}>
-                Email Address:
+                Email Address
               </label>
             </div>
           </div>
@@ -270,7 +279,7 @@ function SignUp() {
                 onChange={(e) => setIdNumber(e.target.value)}
               />
               <label htmlFor="idNumber" className={`${style.inputLabels}`}>
-                ID Number:{" "}
+                ID Number
               </label>
             </div>
           </div>
@@ -331,8 +340,7 @@ function SignUp() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="password" className={`${style.inputLabels}`}>
-              {" "}
-              Password:{" "}
+              Password
             </label>
             <button
               type="button"
@@ -366,7 +374,7 @@ function SignUp() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
               <label htmlFor="phoneNumber" className={`${style.inputLabels}`}>
-                Cellphone Number:
+                Cellphone Number
               </label>
             </div>
           </div>
@@ -485,13 +493,19 @@ function SignUp() {
 
               <span className={`${style.smallText} ml-2`}>
                 I accept the
-                <Link to="" className={`${style.links} mr-2 ml-2`}>
+                <button
+                  onClick={handleTermsAndConditionClick}
+                  className={`${style.links} mr-2 ml-2`}
+                >
                   terms
-                </Link>
+                </button>
                 &
-                <Link to="" className={`${style.links} mr-2 ml-2`}>
+                <button
+                  onClick={handleTermsAndConditionClick}
+                  className={`${style.links} mr-2 ml-2`}
+                >
                   conditions
-                </Link>
+                </button>
               </span>
             </label>
           </div>
@@ -511,6 +525,10 @@ function SignUp() {
           </p>
         </div>
       </div>
+      {/* Modal for Terms And Conditions */}
+      {isModalOpen && (
+        <TermsAndConditions handleModalClose={handleModalClose} />
+      )}
 
       <Footer />
     </>

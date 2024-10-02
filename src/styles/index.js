@@ -1,7 +1,8 @@
+// tailwindcss:ignore
 const styles = {
   /**Benefits */
   benefitsWrapper:
-    "flex flex-col md:flex-row gap-[16px] mt-9 w-full px-4 md:px-0",
+    "flex flex-col md:flex-row gap-[16px] mt-9 w-full px-4 md:px-0 ",
 
   /** BenefitsCard */
   benefitsCardBG:
@@ -9,7 +10,7 @@ const styles = {
   benefitsCardBorder:
     "flex w-full flex-row justify-between items-center border-b border-buttonBluePastelLight dark:border-borderBlue gap-2",
   benefitsCardIcon:
-    "h-[22px] w-[26px] text-blue ml-7 text-textBrightBlue dark:text-[#009EFF]",
+    "h-[22px] w-[26px] ml-7 text-textBrightBlue dark:text-[#009EFF]",
   benefitsCardSpan: "-mt-3 md:-mt-3 md:ml-2 ml-2",
   benefitsCardDescription:
     "text-start mt-6  text-textBlack dark:text-textWhite font-thin text-[12px] md:text-[14px]",
@@ -56,11 +57,11 @@ const styles = {
 
   /** UseCases **/
   useCasesBG:
-    "dark:bg-secondary bg-[#F2F8FF] flex flex-col justify-center items-center rounded-3xl mt-10 p-4 md:p-8",
+    "dark:bg-secondary bg-backgroundLight flex flex-col justify-center items-center rounded-3xl mt-10 p-4 md:p-6",
   useCasesRedText:
-    "dark:text-dangerDark text-dangerLight font-poppins text-[14px] md:text-[14px]  font-medium",
+    "dark:text-dangerDark text-dangerLight font-poppins text-sm font-medium",
   useCasesDescriptionText:
-    "w-full md:w-[400px] text-center mt-6 font-light leading-6 text-[14px] sm:text-[14px]",
+    "w-full md:w-[400px] text-center mt-6 font-light font-poppins leading-6 text-[14px] sm:text-[14px]",
 
   /** UseCaseDropDownCard */
   UseCaseDropdownCardBorder:
@@ -68,12 +69,13 @@ const styles = {
   UseCaseDropdownCardTitle:
     "text-black dark:text-textWhite text-[14px] font-light font-poppins hover:text-textBlue",
   UseCaseDropdownCardContent:
-    "flex text-[14px] md:text-[14px] font-light font-poppins w-full sm:w-[400px] md:w-[660px] w-full text-start text-black dark:text-textWhite",
+    "flex text-[14px] md:text-[14px] font-light font-poppins  sm:w-[400px] md:w-[660px] w-full text-start text-black dark:text-textWhite",
   UseCaseDropdownCardContentWrapper:
     "flex items-start sm:items-center md:items-center flex-col sm:flex-row md:flex-row justify-between",
 
   /** UseCaseDropDownTabCard */
-  UseCaseDropdownTabCardBG: "bg-white dark:bg-primary rounded-b-lg p-4 w-full ",
+  UseCaseDropdownTabCardBG:
+    "bg-white dark:bg-componentsBackgroundDark rounded-b-lg p-2 w-full ",
   UseCaseDropdownTabCardImg: "w-full h-40 object-cover rounded-t-lg",
   UseCaseDropdownTabCardContent:
     "text-textBlack dark:text-textWhite font-poppins font-light text-[13px] text-left sm:text-center md:text-left w-full opacity-75 ",
@@ -93,8 +95,9 @@ const styles = {
     "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 mt-6",
 
   /** Navbar **/
-  navbarContainer: "fixed top-0 left-0 right-0 z-10 py-2 md:px-0 lg:px-0 px-8",
-  navbarWrapper: "container mx-auto flex justify-between items-center h-20",
+  navbarContainer:
+    "fixed top-0 left-16 right-12 z-10 py-2 md:px-0 lg:px-0 mx-auto",
+  navbarWrapper: " w-full mx-auto flex justify-between items-center h-20",
   navbarIconWrapper: "flex items-center ",
   navbarLogo: "w-[180px] h-[50px] ",
   navbarLogout:
@@ -201,10 +204,10 @@ const styles = {
   form: "container mx-auto max-w-xl p-8 border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl shadow-md w-full md:w-3/4 lg:w-2/3 justify-center items-center mt-10",
 
   inputs:
-    "border dark:border-borderBlue  border-buttonBluePastelLight rounded-lg w-full py-4 px-3 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[56px]",
+    "border dark:border-borderBlue  border-buttonBluePastelLight rounded-lg w-full py-4 px-3 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[56px] bg-transparent",
 
   inputLabels:
-    "text-textBlack dark:text-white font-poppins text-[11px] block text-left absolute top-[-8px] left-[10px] bg-white dark:bg-primary z-10 px-1",
+    "text-textBlack dark:text-white font-poppins text-[11px] block text-left absolute top-[-8px] left-[10px] z-10 px-1",
 
   smallText: "dark:text-textWhite text-black font-poppins text-[14px]",
 
@@ -222,10 +225,10 @@ const styles = {
   linkHover: "hover:text-borderBlueSecond hover:underline",
 
   buttons:
-    "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl hover:scale-105",
+    "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl  transition-all duration-300 ease-in-out hover:scale-105",
 
   linkButtons:
-    "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl flex justify-center items-center",
+    "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-3xl flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-105",
 
   successButton:
     "bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-4 px-4 focus:outline-none focus:shadow-outline text-[14px] h-[56px] w-full rounded-lg text-center justify-center",

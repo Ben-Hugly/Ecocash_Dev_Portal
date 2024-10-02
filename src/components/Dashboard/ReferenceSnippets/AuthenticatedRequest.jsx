@@ -21,7 +21,10 @@ function AuthenticatedRequest() {
   - "9999"`;
 
   return (
-    <div className="bg-componentsBackgroundLight dark:bg-componentsBackgroundDark text-black dark:text-white  rounded-3xl p-5 font-poppins">
+    <div
+      id="auth-request"
+      className="bg-componentsBackgroundLight dark:bg-componentsBackgroundDark text-black dark:text-white  rounded-3xl p-5 font-poppins"
+    >
       <div className=" text-textBlack dark:text-white text-left font-poppins gap-3 flex flex-col">
         <h2 className="text-[28px] font-semibold font-poppins">
           Authenticated Request

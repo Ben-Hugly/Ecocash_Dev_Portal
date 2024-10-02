@@ -1,6 +1,6 @@
 import React from "react";
 import { Java, Python, Javascript } from "../Dashboard/CodeSamples";
-import WasThisHelpful from "./WasThisHelpful";
+import WasThisHelpful from "./DefaultLayout/WasThisHelpful";
 
 function SampleSnippets() {
   return (

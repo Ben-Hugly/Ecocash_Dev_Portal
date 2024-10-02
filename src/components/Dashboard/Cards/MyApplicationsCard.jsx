@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import { step_into, step_out, undo } from "../../../assets/DashboardIcons";
 import { FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function MyApplicationsCard({
   id = "Default ID",
@@ -33,7 +34,7 @@ function MyApplicationsCard({
   );
 
   return (
-    <div className="bg-opacity-50 backdrop-blur-lg border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl p-4 flex flex-col shadow-lg">
+    <div className="bg-opacity-50 backdrop-blur-lg border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl p-4 flex flex-col shadow-lg transition-all duration-300 ease-in-out hover:scale-105">
       <div className="flex justify-between items-center mb-2 gap-8">
         <h4 className="text-xl font-semibold">{id}</h4>
         <div className="flex items-center space-x-2">
@@ -50,7 +51,9 @@ function MyApplicationsCard({
               {currency}
             </span>
           </div>
-          <FaChevronRight className="text-red-500" />
+          <Link to="/dashboard/myapps">
+            <FaChevronRight className="text-red-500" />
+          </Link>
         </div>
       </div>
 

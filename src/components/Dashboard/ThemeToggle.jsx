@@ -1,33 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { FaMoon } from "react-icons/fa";
-import { BsSunFill } from "react-icons/bs";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { useTheme } from "../../context/ThemeContext";
+
 function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(true);
+  const { theme, setTheme } = useTheme();
+  console.log("Current Theme Toogle:", theme);
 
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
+  const toggleTheme = () => {
     if (theme === "dark") {
-      setDarkMode(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+      setTheme("light");
     } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+      setTheme("dark");
     }
-  }, [darkMode]);
+  };
 
   return (
     <div
-      className="relative w-12 h-12 flex items-center cursor-pointer rounded-full p-3  hover:bg-textDimBlue"
-      onClick={() => setDarkMode(!darkMode)}
+      className="relative w-12 h-12 flex items-center cursor-pointer rounded-full p-3 hover:bg-textDimBlue"
+      onClick={toggleTheme}
     >
-      {darkMode ? (
+      {theme === "dark" ? (
         <MdOutlineLightMode
           size={28}
           className="text-yellow-400 hover:scale-125"

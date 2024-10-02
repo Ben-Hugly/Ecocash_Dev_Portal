@@ -16,7 +16,7 @@ function Java() {
     Response response = client.newCall(request).execute();
   `;
   return (
-    <div>
+    <div id="java">
       <CodeSnippet codeString={javaCode} language={"java"} />
     </div>
   );

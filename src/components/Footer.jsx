@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "../styles";
 import { hugly } from "../assets";
+import { TermsAndConditions } from "./Dashboard/Modal";
 
 function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleTermsAndConditionClick = () => {
+    setIsModalOpen(true);
+  };
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
   return (
     <footer className={`${style.footerWrapper}`}>
       <div className={`${style.footerBorderWrapper}`}>
@@ -12,9 +20,12 @@ function Footer() {
               © Copyright {new Date().getFullYear()} EcoCash Holdings{" "}
             </div>
             <div className="border-l border-gray-300 h-4 mx-2"></div>
-            <a href="#" className={`${style.linkHover}`}>
+            <button
+              onClick={handleTermsAndConditionClick}
+              className={`${style.linkHover}`}
+            >
               Terms & Conditions
-            </a>
+            </button>
             <div className="border-l border-gray-300 h-4 mx-2"></div>
             <a href="#" className={`${style.linkHover}`}>
               Privacy Policy
@@ -32,6 +43,10 @@ function Footer() {
             <span className="text-sm font-medium">Hugly.Studio</span>
           </div>
         </div>
+        {/* Modal for Terms And Conditions */}
+        {isModalOpen && (
+          <TermsAndConditions handleModalClose={handleModalClose} />
+        )}
       </div>
     </footer>
   );

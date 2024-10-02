@@ -7,6 +7,7 @@ import {
 import { SocialMediaLinks, Footer } from "../components";
 import { Outlet } from "react-router-dom";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { ThemeProvider } from "../context/ThemeContext";
 function Dashboard() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   useEffect(() => {
@@ -27,25 +28,27 @@ function Dashboard() {
   }, []);
 
   return (
-    <ErrorBoundary>
-      <div className="flex flex-row h-full dark:bg-backgroundDark bg-white w-full">
-        <div
-          className="flex flex-col flex-grow p-2 gap-6 w-1/5"
-          style={{ display: isSidebarVisible ? "block" : "none" }}
-        >
-          <Sidebar />
-          {/* Ensures Sidebar doesn't grow */}
-        </div>
-        <div className="flex flex-col flex-grow p-2 gap-6 w-4/5">
-          <NavbarDashboard toggleSidebar={isSidebarVisible} />
-          <Outlet />
+    <ThemeProvider>
+      <ErrorBoundary>
+        <div className="flex flex-row h-full dark:bg-backgroundDark bg-backgroundLight w-full">
+          <div
+            className="flex flex-col flex-grow p-2 gap-6 w-1/5"
+            style={{ display: isSidebarVisible ? "block" : "none" }}
+          >
+            <Sidebar />
+            {/* Ensures Sidebar doesn't grow */}
+          </div>
+          <div className="flex flex-col flex-grow p-2 gap-6 w-4/5 ">
+            <NavbarDashboard toggleSidebar={isSidebarVisible} />
+            <Outlet />
 
-          <DocumentationOverviewSmall />
-          <SocialMediaLinks />
-          <Footer />
+            <DocumentationOverviewSmall />
+            <SocialMediaLinks />
+            <Footer />
+          </div>
         </div>
-      </div>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 

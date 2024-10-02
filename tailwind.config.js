@@ -32,8 +32,8 @@ export default {
         darkBgComponents: "#00162A",
 
         //Light Theme Colors
-        backgroundLight: "#FFFFFF",
-        componentsBackgroundLight: "#F2F8FF",
+        backgroundLight: "#F2F8FF",
+        componentsBackgroundLight: "#FFFFFF",
         successLight: "#88DF52",
         dangerLight: "#E31A1C",
         warningLight: "#FEAF58",

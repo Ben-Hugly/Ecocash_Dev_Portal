@@ -16,8 +16,8 @@ function TableRow({
   activeTab,
 }) {
   return (
-    <tr>
-      <td className="px-4 py-4 whitespace-nowrap text-textBlack dark:text-textWhite font-poppins text-left">
+    <tr className="transition-all duration-300 ease-in hover:scale-105">
+      <td className="px-4 py-4 whitespace-nowrap text-textBlack dark:text-textWhite font-poppins text-left ">
         {id}
       </td>
       <td className="px-4 py-4 whitespace-nowrap text-textBlack dark:text-textWhite font-poppins text-left">
@@ -45,10 +45,13 @@ function TableRow({
         {category}
       </td>
       <td className="px-4 py-4 whitespace-nowrap text-gray-900 flex justify-end">
-        <div className="flex flex-row items-center justify-between gap-6 text-headerTextLight">
-          <span className="text-sm  hover:scale-105 hover:text-textBlue font-poppins">
+        <div className="flex flex-row items-center justify-between gap-6 text-textDimBlue">
+          <Link
+            to={`/dashboard/myapps/details/${encodeURIComponent(name)}`}
+            className="text-sm font-thin opacity-70 hover:scale-105 hover:text-textBlue font-poppins"
+          >
             View Transactions
-          </span>
+          </Link>
           <Link to="/dashboard/myapps/edit">
             <MdEdit
               size={20}
@@ -79,7 +82,7 @@ function TableRow({
               />
             </div>
           )}
-          <Link to="/dashboard/myapps/details">
+          <Link to={`/dashboard/myapps/details/${encodeURIComponent(name)}`}>
             <IoChevronForward
               size={20}
               className="text-dangerLight  hover:scale-105"

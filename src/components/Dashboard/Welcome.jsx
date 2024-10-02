@@ -16,7 +16,7 @@ function Welcome({ username }) {
 
       <Link
         to={"/dashboard/myapps/new"}
-        className="bg-textDimBlue hover:bg-textBlue text-white font-poppins px-4 py-2 h-[44px] rounded-3xl flex items-center text-sm ml-0 md:ml-2"
+        className="bg-textDimBlue hover:bg-textBlue text-white font-poppins px-4 py-2 h-[44px] rounded-3xl flex items-center text-sm ml-0 md:ml-2 transition-all duration-300 ease-in-out hover:scale-105"
       >
         New Application
         <FiPlus className="ml-2" size={24} />

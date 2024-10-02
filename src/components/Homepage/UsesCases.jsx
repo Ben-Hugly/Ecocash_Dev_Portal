@@ -5,7 +5,7 @@ import UseCaseTabSection from "../UseCaseSection/UseCaseTabSection";
 
 function UsesCases() {
   return (
-    <div className={`${style.useCasesBG}`}>
+    <div className={`${style.useCasesBG} gap-4`}>
       <span className={`${style.useCasesRedText}`}>USE CASES</span>
       <span
         className={`${style.headings2} w-full md:w-[560px] leading-normal `}
@@ -18,13 +18,9 @@ function UsesCases() {
         your needs.
       </div>
 
-      <div className="mt-12">
-        <UseCaseTabSection />
-      </div>
+      <UseCaseTabSection />
 
-      <div>
-        <UseCaseDropdownSection />
-      </div>
+      <UseCaseDropdownSection />
     </div>
   );
 }

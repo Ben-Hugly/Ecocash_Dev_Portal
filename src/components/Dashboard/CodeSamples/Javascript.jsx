@@ -23,7 +23,7 @@ function Javascript() {
        console.log(response);
     });`;
   return (
-    <div>
+    <div id="python">
       <CodeSnippet codeString={javascriptCode} language={"javascript"} />
     </div>
   );

@@ -7,16 +7,37 @@ function AddMember({ handleModalClose }) {
   const [linkRole, setLinkRole] = useState("");
   const [emailRole, setEmailRole] = useState("");
   const [link, setLink] = useState("");
-  const [email, setEmail] = useState("");
+
+  const [emails, setEmails] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleEmailChange = (value) => {
+    setInputValue(value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " " || e.key === ",") {
+      e.preventDefault();
+      const trimmedEmail = inputValue.trim();
+
+      if (trimmedEmail && !emails.includes(trimmedEmail)) {
+        setEmails([...emails, trimmedEmail]);
+        setInputValue("");
+      }
+    }
+  };
+
+  const removeEmail = (emailToRemove) => {
+    setEmails(emails.filter((email) => email !== emailToRemove));
+  };
 
   const handleEmailLingChange = (role) => setEmailRole(role);
   const handleLinkRoleChange = (role) => setLinkRole(role);
   const handelLinkChange = (link) => setLink(link);
-  const handelEmalChange = (link) => setEmail(link);
 
   return (
     <div className="fixed inset-0 items-center justify-center z-50 bg-black bg-opacity-50 font-poppins flex flex-col text-left">
-      <div className="p-6 max-w-lg w-full shadow-lg dark:bg-componentsBackgroundDark bg-backgroundLight border rounded-3xl border-buttonBluePastelLight dark:border-borderBlue text-textBlack dark:text-textWhite relative">
+      <div className="p-6 max-w-[704px] w-full shadow-lg dark:bg-componentsBackgroundDark bg-backgroundLight border rounded-3xl border-buttonBluePastelLight dark:border-borderBlue text-textBlack dark:text-textWhite relative">
         <button
           onClick={handleModalClose}
           className="bg-red-600 text-white px-3 py-3 rounded-full hover:bg-red-700 mb-4 absolute top-4 right-4"
@@ -40,15 +61,15 @@ function AddMember({ handleModalClose }) {
           <div className="flex flex-col sm:flex-row items-center w-full gap-2 mt-2">
             <div className="flex flex-row items-center w-full ">
               <input
-                className="border dark:border-borderBlue border-buttonBluePastelLight rounded-lg py-4 px-4 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[44px] w-full"
-                placeholder="Enter your text here..."
+                className="rounded-xl py-4 px-4 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:componentsBackgroundDark bg-componentsBackgroundLight   hover:border-borderBlueSecond font-poppins text-[14px] h-[44px] w-full"
+                placeholder="https://developer.ecocash.co.zw/share/ap..............."
                 value={link}
                 onChange={(e) => handelLinkChange(e.target.value)}
               />
 
               <div className="flex relative items-center justify-end ml-auto">
                 <select
-                  className="pl-2 pr-6 py-2 text-textBlueSecond font-poppins font-normal text-sm rounded-xl h-[36px] bg-buttonBluePastelLight appearance-none dark:bg-dimBlue dark:text-textBlue mr-2 absolute right-0"
+                  className="pl-2 pr-6 py-2 text-black font-poppins font-normal text-sm rounded-xl h-[36px] bg-backgroundLight appearance-none dark:bg-dimBlue  mr-1 absolute right-0"
                   value={linkRole}
                   onChange={(e) => handleLinkRoleChange(e.target.value)}
                 >
@@ -61,12 +82,12 @@ function AddMember({ handleModalClose }) {
                 <MdOutlineKeyboardArrowDown
                   color="#EC2125"
                   size={20}
-                  className="absolute right-3"
+                  className="absolute right-2"
                 />
               </div>
             </div>
             <button className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] rounded-3xl hover:scale-105 h-[44px] w-full sm:w-1/6">
-              <span className="">Copy link</span>
+              <span>Copy link</span>
             </button>
           </div>
         </div>
@@ -74,43 +95,62 @@ function AddMember({ handleModalClose }) {
         <div className="mt-5">
           <span className="text-[14px] font-medium ml-4">Invite by email</span>
 
-          <div className="flex flex-col sm:flex-row items-center w-full gap-2 mt-2">
-            <div className="flex flex-row items-center w-full ">
-              <input
-                className="border dark:border-borderBlue border-buttonBluePastelLight rounded-lg py-4 px-4 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:bg-primary hover:border-borderBlueSecond font-poppins text-[14px] h-[44px] w-full"
-                placeholder="Invite others by email"
-                value={email}
-                onChange={(e) => handelEmalChange(e.target.value)}
-              />
-
-              <div className="flex relative items-center justify-end ml-auto">
-                <select
-                  className="pl-2 pr-6 py-2 text-textBlueSecond font-poppins font-normal text-sm rounded-xl h-[36px] bg-buttonBluePastelLight appearance-none dark:bg-dimBlue dark:text-textBlue mr-2 absolute right-0"
-                  value={emailRole}
-                  onChange={(e) => handleEmailLingChange(e.target.value)}
+          <div className="flex flex-col items-center w-full">
+            <div className="flex flex-wrap mt-4 ">
+              {emails.map((email, index) => (
+                <span
+                  key={index}
+                  className="bg-componentsBackgroundLight rounded-lg py-1 px-2 mr-2 mb-2 flex items-center"
                 >
-                  <option value="">Can View</option>
-                  <option value="Admin">Admin</option>
-                  <option value="Editor">Editor</option>
-                  <option value="Viewer">Viewer</option>
-                  <option value="Owner">Owner</option>
-                </select>
-                <MdOutlineKeyboardArrowDown
-                  color="#EC2125"
-                  size={20}
-                  className="absolute right-3"
-                />
-              </div>
+                  {email}
+                  <button
+                    className="ml-2 text-red-500"
+                    onClick={() => removeEmail(email)}
+                  >
+                    &times;
+                  </button>
+                </span>
+              ))}
             </div>
-            <button className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] rounded-3xl hover:scale-105 h-[44px] w-full sm:w-1/6">
-              <span className="">Invite</span>
-            </button>
+
+            <div className="flex flex-col sm:flex-row items-center w-full gap-2 mt-2">
+              <div className="flex flex-row items-center w-full ">
+                <input
+                  className="rounded-xl py-4 px-4 text-textBlack dark:text-white focus:outline-none focus:shadow-outline dark:componentsBackgroundDark bg-componentsBackgroundLight   hover:border-borderBlueSecond font-poppins text-[14px] h-[44px] w-full"
+                  placeholder="Invite others by email"
+                  value={inputValue}
+                  onChange={(e) => handleEmailChange(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                />
+                <div className="flex relative items-center justify-end ml-auto">
+                  <select
+                    className="pl-2 pr-6 py-2 text-black font-poppins font-normal text-sm rounded-xl h-[36px] bg-backgroundLight appearance-none dark:bg-dimBlue  mr-1 absolute right-0"
+                    value={emailRole}
+                    onChange={(e) => handleEmailLingChange(e.target.value)}
+                  >
+                    <option value="">Can View</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Editor">Editor</option>
+                    <option value="Viewer">Viewer</option>
+                    <option value="Owner">Owner</option>
+                  </select>
+                  <MdOutlineKeyboardArrowDown
+                    color="#EC2125"
+                    size={20}
+                    className="absolute right-2"
+                  />
+                </div>
+              </div>
+              <button className="bg-textBlueSecond hover:bg-textBlue text-white font-poppins py-2 px-4 focus:outline-none focus:shadow-outline text-[14px] rounded-3xl hover:scale-105 h-[44px] w-full sm:w-1/6 mt-2 sm:mt-0 ">
+                <span className="">Invite</span>
+              </button>
+            </div>
           </div>
         </div>
 
         <div className="border border-buttonBluePastelLight dark:border-borderBlue mt-8 rounded-3xl flex flex-col p-1">
           <div className="flex flex-row gap-2 items-center p-3 text-sm font-poppins font-thin text-left">
-            <IoWarning size={20} color="#FFFF00" />
+            <IoWarning size={24} color="#FEAF58" />
             <span className="text-textBlack dark:text-textWhite font-semibold">
               Warning
             </span>

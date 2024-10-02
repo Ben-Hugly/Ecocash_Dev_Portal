@@ -23,7 +23,7 @@ data = res.read()
 print(data.decode("utf-8"))`;
 
   return (
-    <div>
+    <div id="python">
       <CodeSnippet codeString={pythonCode} language={"python"} />
     </div>
   );

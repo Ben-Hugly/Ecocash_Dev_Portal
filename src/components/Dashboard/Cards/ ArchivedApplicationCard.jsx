@@ -1,6 +1,7 @@
 import React from "react";
 import { step_into, step_out, undo } from "../../../assets/DashboardIcons";
 import { FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const LabelWithCircle = ({ text, color }) => (
   <div
@@ -23,7 +24,7 @@ function ArchivedApplicationCard({
   onDelete,
 }) {
   return (
-    <div className="bg-opacity-50 backdrop-blur-lg border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl p-6 flex flex-col shadow-lg">
+    <div className="bg-opacity-50 backdrop-blur-lg border border-buttonBluePastelLight dark:border-borderBlue rounded-3xl p-6 flex flex-col shadow-lg transition-all duration-75 ease-in-out hover:scale-105">
       <div className="grid grid-flow-col justify-between items-center mb-2 ">
         <h4 className="text-xl font-semibold">{id}</h4>
         <div className="grid grid-flow-col items-center space-x-1">
@@ -36,8 +37,9 @@ function ArchivedApplicationCard({
               {currency}
             </span>
           </div>
-
-          <FaChevronRight className="text-red-500 text-right " />
+          <Link to="/dashboard/myapps">
+            <FaChevronRight className="text-red-500 text-right " />
+          </Link>
         </div>
       </div>
 
@@ -118,10 +120,10 @@ function ArchivedApplicationCard({
       <hr className="my-3 border-buttonBluePastelLight dark:border-borderBlue mt-7" />
 
       <div className="flex space-x-4 mt-4">
-        <button className="bg-[#02437D] text-white px-3 py-2 rounded-full hover:bg-[#023B6A] w-full text-sm">
+        <button className="bg-dimBlue text-white px-3 py-2 rounded-full hover:bg-[#023B6A] w-full text-sm transition-all duration-300 ease-in-out hover:scale-105">
           Delete Forever
         </button>
-        <button className="bg-buttonBlue text-white px-3 py-2 rounded-full hover:bg-[#024D8F] w-full text-sm">
+        <button className="bg-buttonBlue text-white px-3 py-2 rounded-full hover:bg-[#024D8F] w-full text-sm transition-all duration-300 ease-in-out hover:scale-105">
           Restore
         </button>
       </div>

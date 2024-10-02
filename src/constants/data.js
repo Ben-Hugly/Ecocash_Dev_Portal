@@ -98,6 +98,244 @@ const GettingStartedData = [
   },
 ];
 
+const agreementData = [
+  {
+    title: "01. Definitions",
+    number: "01",
+    intro:
+      "In this Agreement, unless the context clearly indicates a contrary intention, the following words and expressions bear the meanings assigned to them and cognate expressions bear corresponding meanings:-",
+    content: [
+      {
+        number: "1.1.1",
+        term: "API",
+        description:
+          "Application Programming Interface; a set of routines, protocols, and tools for building software applications.",
+      },
+      {
+        number: "1.1.2",
+        term: "Intellectual Property",
+        description:
+          "All intangible rights protecting products of human intelligence and creation, including (but not limited to) copyright works, names, package designs, know-how copyright, graphic designs, branding, trademarks, trade secrets, goodwill, patents, and trade names.",
+      },
+      {
+        number: "1.1.3",
+        term: "Parties",
+        description:
+          "The signatories to this agreement, being EcoCash and the Customer, including successors in title, assigns, and administrators.",
+      },
+      {
+        number: "1.1.4",
+        term: "Trademark",
+        description:
+          "All existing registered or unregistered trademarks, logos, and brand identifications, including future trademarks used by EcoCash.",
+      },
+    ],
+  },
+  {
+    title: "02. API Access Grant",
+    number: "02",
+    content: [
+      {
+        number: "2.1",
+        description:
+          "EcoCash grants a non-exclusive, non-transferable, limited right to access and use the API solely for integrating and developing applications that interact with EcoCash mobile money.",
+      },
+      {
+        number: "2.2",
+        description:
+          "Use of the API must comply with its documentation and guidelines provided by EcoCash.",
+      },
+    ],
+  },
+  {
+    title: "03. Registration and Account",
+    number: "03",
+    content: [
+      {
+        number: "3.1",
+        description:
+          "To access and use the API, you must sign up and create an account through the designated portal.",
+      },
+      {
+        number: "3.2",
+        description:
+          "You are responsible for providing accurate and up-to-date information during registration.",
+      },
+      {
+        number: "3.3",
+        description:
+          "You agree not to share credentials with unauthorized individuals or entities.",
+      },
+    ],
+  },
+  {
+    title: "04. Compliance with Laws and Regulations",
+    number: "04",
+    content: [
+      {
+        number: "4.1",
+        description: "The governing law is the law of Zimbabwe.",
+      },
+      {
+        number: "4.2",
+        description:
+          "You shall adhere to all applicable laws, regulations, and industry standards in connection with API use.",
+      },
+      {
+        number: "4.3",
+        description:
+          "You are responsible for ensuring your applications do not infringe upon third-party rights.",
+      },
+    ],
+  },
+  {
+    title: "05. Governing Law and Jurisdiction",
+    number: "05",
+    content: [
+      {
+        number: "5.1",
+        description:
+          "These Terms are governed by the laws of Zimbabwe, without regard to conflict of laws principles.",
+      },
+      {
+        number: "5.2",
+        description:
+          "Both parties must comply with applicable laws and governmental regulations.",
+      },
+      {
+        number: "5.3",
+        description:
+          "Submit to the jurisdiction of the Magistrates Court for disputes.",
+      },
+    ],
+  },
+  {
+    title: "06. Data Privacy and Security",
+    number: "06",
+    content: [
+      {
+        number: "6.1",
+        description:
+          "Keep all knowledge and information supplied by EcoCash confidential.",
+      },
+      {
+        number: "6.2",
+        description:
+          "Handle user data in compliance with applicable data protection laws and regulations.",
+      },
+      {
+        number: "6.3",
+        description: "Implement measures to protect user data.",
+      },
+    ],
+  },
+  {
+    title: "07. Intellectual Property",
+    number: "07",
+    content: [
+      {
+        number: "7.1",
+        description:
+          "EcoCash retains all rights to the API and associated intellectual property rights.",
+      },
+      {
+        number: "7.2",
+        description:
+          "The proprietary rights of the API are owned exclusively by EcoCash.",
+      },
+      {
+        number: "7.3",
+        description:
+          "You shall not apply for registration of the API or related trademarks.",
+      },
+      {
+        number: "7.4",
+        description:
+          "No modification, adaptation, reverse engineering, or derivative works based on the API, except as permitted by law.",
+      },
+    ],
+  },
+  {
+    title: "08. Termination",
+    number: "08",
+    content: [
+      {
+        number: "8.1",
+        description:
+          "EcoCash reserves the right to suspend or terminate API access for any reason.",
+      },
+      {
+        number: "8.2",
+        description:
+          "Upon termination, you shall immediately cease all API use and delete any obtained data.",
+      },
+    ],
+  },
+  {
+    title: "09. Limitation of Liability",
+    number: "09",
+    content: [
+      {
+        number: "9.1",
+        description:
+          "EcoCash shall not be liable for any damages arising from API use.",
+      },
+      {
+        number: "9.2",
+        description:
+          "No guarantees of availability, accuracy, or reliability of the API.",
+      },
+    ],
+  },
+  {
+    title: "10. Modifications",
+    number: "10",
+    content: [
+      {
+        number: "10.1",
+        description:
+          "EcoCash reserves the right to modify or update these Terms at any time.",
+      },
+    ],
+  },
+  {
+    title: "11. Addresses For Notices",
+    number: "11",
+    content: [
+      {
+        number: "11.1",
+        description:
+          "The address provided on the application form is your chosen address for notices.",
+      },
+      {
+        number: "11.2",
+        description:
+          "EcoCash's address for notices: 1906 Liberation Legacy Way, Harare.",
+      },
+      {
+        number: "11.3",
+        description:
+          "Notice is deemed received within specified periods depending on delivery method.",
+      },
+      {
+        number: "11.4",
+        description: "EcoCash may send information via email or SMS.",
+      },
+    ],
+  },
+  {
+    title: "12. Entire Agreement",
+    number: "12",
+    content: [
+      {
+        number: "12.1",
+        description:
+          "This agreement constitutes the entire agreement concerning the API and supersedes any prior agreements.",
+      },
+    ],
+  },
+];
+
 const socialMediaData = [
   {
     icon: IoLogoWhatsapp,
@@ -210,16 +448,19 @@ const overviewApiOverviewData = [
     image: payment,
     title: "Payments",
     content: "Libraries to assist with integrations",
+    link: "api/payments",
   },
   {
     image: refund,
     title: "Refunds",
     content: "Libraries to assist with integrations",
+    link: "api/refunds",
   },
   {
     image: lookup,
     title: "Transactions Lookup",
     content: "Generate API Key",
+    link: "api/lookup",
   },
 ];
 
@@ -228,26 +469,31 @@ const overviewDeveloperData = [
     image: byi,
     title: "Building Your Integration",
     content: "Generate API Key",
+    link: "dev/byi",
   },
   {
     image: c2b,
     title: "C2B",
     content: "Customer-To-Business transactions",
+    link: "dev/c2b",
   },
   {
     image: b2c,
     title: "B2C",
     content: "Business-To-Customer Transactions",
+    link: "dev/b2c",
   },
   {
     image: b2b,
     title: "B2B",
     content: "Business-To-Business Transactions",
+    link: "dev/b2b",
   },
   {
     image: rev,
     title: "Reversals",
     content: "Initiate a reversal on a transaction",
+    link: "dev/reversal",
   },
 ];
 const buildingYourIntegration = [
@@ -430,4 +676,5 @@ export {
   overviewDeveloperData,
   overviewApiOverviewData,
   buildingYourIntegration,
+  agreementData,
 };
